@@ -1,0 +1,32 @@
+name: LocalTests
+on: 
+  pull_request_target:
+    types: [assigned, opened, synchronize, reopened, ready_for_review]
+  push:
+    branches:
+      - main
+      - future
+
+# Jobs section
+jobs:
+    LocalTests:
+      strategy:
+        fail-fast: false
+        matrix:
+          os: 
+            - ubuntu-20.04
+      runs-on: ${{ matrix.os }}
+      if: github.event.pull_request.draft == false
+      steps:
+        - uses: actions/checkout@v2 
+          with:
+            ref: ${{ github.event.pull_request.head.sha }}
+
+        - name: Upgrade pip and install requirements
+          run: |
+            python3 -m pip install --upgrade pip
+            python3 -m pip install -r requirements.txt
+
+        - name: Running Local Tests
+          run: |
+            python3 tests/test_expansion.py

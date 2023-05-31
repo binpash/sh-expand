@@ -1,14 +1,12 @@
 import copy
-import logging
 
 from shasta.ast_node import *
+
+from sh_expand.util import log
 
 ################################################################################
 # SAFE EXPANSION ANALYSIS
 ################################################################################
-
-def log(msg: str):
-    logging.info(f'Expansion: {msg}')
 
 ## This contains all necessary state of the expansion
 class ExpansionState:
@@ -245,7 +243,7 @@ def lookup_variable_inner_unsafe(varname, exp_state: ExpansionState):
 def is_u_set(exp_state: ExpansionState):
     value = lookup_variable_inner_unsafe('-', exp_state)
     # log(f'Previous set status is: {value}')
-    return "u" in value
+    return value is not None and "u" in value
 
 
 def invalidate_variable(var, reason, exp_state):
