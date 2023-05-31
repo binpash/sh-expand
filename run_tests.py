@@ -107,7 +107,7 @@ for test_name in tests:
                 if got != expected:
                     print(f"In {test_name}, expected:\n\t",expected,"Got:\n\t",got)
                     expansion_failures.add(test_name)
-        except (expand.EarlyError, expand.StuckExpansion, expand.Unimplemented) as e:
+        except (expand.EarlyError, expand.StuckExpansion, expand.ImpureExpansion, expand.Unimplemented) as e:
             if expected_safe:
                 print("Found unexpected failure in", test_name)
                 print("Error:", traceback.format_exc())
@@ -115,7 +115,7 @@ for test_name in tests:
             else:
                 print("Found expected failure in", test_name)
         except Exception as e:
-            print("Error:", traceback.format_exc())
+            print(f"Error in {test_name}:", traceback.format_exc())
             expansion_failures.add(test_name)
 
 if len(expansion_failures) == 0:
