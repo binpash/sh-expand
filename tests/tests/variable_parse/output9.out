@@ -1,0 +1,5554 @@
+tcc: journal file is /pash/posix/tet3.8/vsc/journal.out
+17:55:32  Execute /tset/POSIX.shell/shell/sh_09.ex
+declare -- BASH="/bin/bash"
+declare -r BASHOPTS="cmdhist:complete_fullquote:extquote:force_fignore:hostcomplete:interactive_comments:progcomp:promptvars:sourcepath"
+declare -ir BASHPID
+declare -A BASH_ALIASES=()
+declare -a BASH_ARGC=([0]="1" [1]="1")
+declare -a BASH_ARGV=([0]="/tmp/pash_BAAI6kR/tmp0g6vhek4" [1]="1-1000")
+declare -A BASH_CMDS=()
+declare -- BASH_COMMAND
+declare -- BASH_EXECUTION_STRING="source /tmp/pash_BAAI6kR/tmp0g6vhek4"
+declare -a BASH_LINENO=([0]="86" [1]="4" [2]="0")
+declare -a BASH_SOURCE=([0]="/pash/pash/compiler/pash_declare_vars.sh" [1]="/pash/pash/compiler/pash_runtime.sh" [2]="/tmp/pash_BAAI6kR/tmp0g6vhek4")
+declare -- BASH_SUBSHELL
+declare -ar BASH_VERSINFO=([0]="4" [1]="4" [2]="20" [3]="1" [4]="release" [5]="x86_64-pc-linux-gnu")
+declare -- BASH_VERSION="4.4.20(1)-release"
+declare -- COMP_WORDBREAKS
+declare -x DAEMON_SOCKET="/tmp/pash_BAAI6kR//daemon_socket"
+declare -x DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1006/bus"
+declare -a DIRSTACK=()
+declare -ir EUID="1006"
+declare -x EXP_EXEC_LIBRARY="/pash/posix/tet3.8/vsc/Src/ImplSpec"
+declare -x EXP_LIBRARY="/pash/posix/tet3.8/vsc/Lib"
+declare -a FUNCNAME
+declare -a GROUPS=()
+declare -i HISTCMD
+declare -x HOME="/home/mgree"
+declare -- HOSTNAME="antikythera"
+declare -- HOSTTYPE="x86_64"
+declare -- IFS=" 	
+"
+declare -x LANG="POSIX"
+declare -x LC_ALL="POSIX"
+declare -x LD_LIBRARY_PATH=":/usr/local/lib/"
+declare -x LESSCLOSE="/usr/bin/lesspipe %s %s"
+declare -x LESSOPEN="| /usr/bin/lesspipe %s"
+declare -x LIBVIRT_DEFAULT_URI="qemu:///system"
+declare -i LINENO
+declare -x LOGNAME="mgree"
+declare -x LS_COLORS="rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:"
+declare -- MACHTYPE="x86_64-pc-linux-gnu"
+declare -x MACROLIB="/pash/posix/tet3.8/vsc/Src/GA/CtgenMacros"
+declare -x MAIL="/var/mail/mgree"
+declare -x OLDPWD="/pash/pash"
+declare -- OPTERR="1"
+declare -i OPTIND="1"
+declare -- OSTYPE="linux-gnu"
+declare -x PASH_DEBUG_LEVEL="0"
+declare -x PASH_FROM_SH="pa.sh"
+declare -x PASH_REDIR="&2"
+declare -x PASH_TMP_PREFIX="/tmp/pash_BAAI6kR/"
+declare -x PASH_TOP="/pash/pash"
+declare -x PATH="/home/mgree/.local/bin:/pash/posix/tet3.8/vsc/Bin:/pash/posix/tet3.8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:."
+declare -a PIPESTATUS=([0]="0")
+declare -ir PPID="6149"
+declare -- PS4="+ "
+declare -x PWD="/pash/posix/tet3.8/vsc/tet_tmp_dir/06120aa/tset/POSIX.shell/shell"
+declare -x PYTHONPATH="/pash/pash/python_pkgs/"
+declare -i RANDOM
+declare -x RUNTIME_DIR="/pash/pash/compiler"
+declare -x RUNTIME_IN_FIFO="/tmp/pash_BAAI6kR//runtime_in_fifo"
+declare -x RUNTIME_LIBRARY_DIR="/pash/pash/compiler/../runtime/"
+declare -x RUNTIME_OUT_FIFO="/tmp/pash_BAAI6kR//runtime_out_fifo"
+declare -- SECONDS
+declare -x SHELL="/bin/bash"
+declare -r SHELLOPTS="braceexpand:hashall:interactive-comments"
+declare -x SHLVL="4"
+declare -x SSH_CLIENT="68.192.246.166 50980 22"
+declare -x SSH_CONNECTION="68.192.246.166 50980 128.30.64.121 22"
+declare -x SSH_TTY="/dev/pts/0"
+declare -x STY="17308.posix"
+declare -x TCL_LIBRARY="/pash/posix/tet3.8/vsc/Src/Interact/tcl/library"
+declare -x TERM="screen"
+declare -x TERMCAP="SC|screen|VT 100/ANSI X3.64 virtual terminal:\\
+	:DO=\\E[%dB:LE=\\E[%dD:RI=\\E[%dC:UP=\\E[%dA:bs:bt=\\E[Z:\\
+	:cd=\\E[J:ce=\\E[K:cl=\\E[H\\E[J:cm=\\E[%i%d;%dH:ct=\\E[3g:\\
+	:do=^J:nd=\\E[C:pt:rc=\\E8:rs=\\Ec:sc=\\E7:st=\\EH:up=\\EM:\\
+	:le=^H:bl=^G:cr=^M:it#8:ho=\\E[H:nw=\\EE:ta=^I:is=\\E)0:\\
+	:li#24:co#80:am:xn:xv:LP:sr=\\EM:al=\\E[L:AL=\\E[%dL:\\
+	:cs=\\E[%i%d;%dr:dl=\\E[M:DL=\\E[%dM:dc=\\E[P:DC=\\E[%dP:\\
+	:im=\\E[4h:ei=\\E[4l:mi:IC=\\E[%d@:ks=\\E[?1h\\E=:\\
+	:ke=\\E[?1l\\E>:vi=\\E[?25l:ve=\\E[34h\\E[?25h:vs=\\E[34l:\\
+	:ti=\\E[?1049h:te=\\E[?1049l:Km=\\E[M:k0=\\E[10~:k1=\\EOP:\\
+	:k2=\\EOQ:k3=\\EOR:k4=\\EOS:k5=\\E[15~:k6=\\E[17~:k7=\\E[18~:\\
+	:k8=\\E[19~:k9=\\E[20~:k;=\\E[21~:F1=\\E[23~:F2=\\E[24~:\\
+	:kh=\\E[1~:@1=\\E[1~:kH=\\E[4~:@7=\\E[4~:kN=\\E[6~:kP=\\E[5~:\\
+	:kI=\\E[2~:kD=\\E[3~:ku=\\EOA:kd=\\EOB:kr=\\EOC:kl=\\EOD:"
+declare -x TERMIN_EXP="/pash/posix/tet3.8/vsc/Lib/termin.exp"
+declare -x TET_ACTIVITY="0"
+declare -x TET_CODE="/var/tmp/tccAAA6120"
+declare -x TET_CONFIG="/var/tmp/tccAAB6120"
+declare -x TET_EXECUTE=""
+declare -x TET_ROOT="/pash/posix/tet3.8"
+declare -x TET_RUN=""
+declare -x TET_SUITE_ROOT="/pash/posix/tet3.8"
+declare -x TET_TIARGS=""
+declare -x TS_BIN="/pash/posix/tet3.8/vsc/Bin"
+declare -x TS_GAINC="/pash/posix/tet3.8/vsc/Inc/GA"
+declare -x TS_INC="/pash/posix/tet3.8/vsc/Inc"
+declare -x TS_LIB="/pash/posix/tet3.8/vsc/Lib"
+declare -x TS_LIBTK="/pash/posix/tet3.8/vsc/Shlib"
+declare -x TS_ROOT="/pash/posix/tet3.8/vsc"
+declare -x TS_SHLIB="/pash/posix/tet3.8/vsc/Shlib"
+declare -ir UID="1006"
+declare -x USER="mgree"
+declare -x VSC_ROOT="/pash/posix/tet3.8/vsc"
+declare -x WINDOW="0"
+declare -x XDG_DATA_DIRS="/usr/local/share:/usr/share:/var/lib/snapd/desktop"
+declare -x XDG_RUNTIME_DIR="/run/user/1006"
+declare -x XDG_SESSION_ID="29"
+declare -- _="Writing vars to: /tmp/pash_BAAI6kR//pash_xCNmfYx1Jw"
+declare -x distro="ubuntu"
+declare -x pash_assert_compiler_success_flag="0"
+declare -x pash_avoid_pash_runtime_completion_flag="0"
+declare -x pash_checking_debug_level="0"
+declare -x pash_checking_log_file="0"
+declare -x pash_checking_speculation="0"
+declare -x pash_daemon="1"
+declare -x pash_daemon_communicates_through_unix_pipes_flag="0"
+declare -- pash_disable_parallel_pipelines="0"
+declare -x pash_dry_run_compiler_flag="0"
+declare -x pash_execute_flag="1"
+declare -- pash_input_args="1-1000"
+declare -x pash_output_time_flag="1"
+declare -x pash_parallel_pipelines="1"
+declare -x pash_previous_exit_status="0"
+declare -x pash_previous_set_status="hBc"
+declare -- pash_runtime_shell_variables_file="/tmp/pash_BAAI6kR//pash_xCNmfYx1Jw"
+declare -x pash_shell_name="sh_09.ex"
+declare -x pash_speculation_flag="0"
+declare -- vars_file="/tmp/pash_BAAI6kR//pash_xCNmfYx1Jw"
+pash_communicate_daemon () 
+{ 
+    local message=$1;
+    pash_redir_output echo "Sending msg to daemon: $message";
+    daemon_response=$(echo "$message" | nc -U "$DAEMON_SOCKET");
+    pash_redir_output echo "Got response from daemon: $daemon_response";
+    echo "$daemon_response"
+}
+declare -fx pash_communicate_daemon
+pash_communicate_daemon_just_send () 
+{ 
+    pash_communicate_daemon $1
+}
+declare -fx pash_communicate_daemon_just_send
+pash_redir_all_output () 
+{ 
+    :
+}
+declare -fx pash_redir_all_output
+pash_redir_all_output_always_execute () 
+{ 
+    $@ > /dev/null 2>&1
+}
+declare -fx pash_redir_all_output_always_execute
+pash_redir_output () 
+{ 
+    :
+}
+declare -fx pash_redir_output
+pash_wait_until_daemon_listening () 
+{ 
+    while ! nc -z -U "$DAEMON_SOCKET" > /dev/null 2>&1; do
+        sleep 0.01;
+    done
+}
+declare -fx pash_wait_until_daemon_listening
+
+declare -- BASH="/bin/bash"
+declare -r BASHOPTS="cmdhist:complete_fullquote:extquote:force_fignore:hostcomplete:interactive_comments:progcomp:promptvars:sourcepath"
+declare -ir BASHPID
+declare -A BASH_ALIASES=()
+declare -a BASH_ARGC=([0]="1" [1]="1")
+declare -a BASH_ARGV=([0]="/tmp/pash_BAAI6kR/tmp0g6vhek4" [1]="1-1000")
+declare -A BASH_CMDS=()
+declare -- BASH_COMMAND
+declare -- BASH_EXECUTION_STRING="source /tmp/pash_BAAI6kR/tmp0g6vhek4"
+declare -a BASH_LINENO=([0]="86" [1]="10" [2]="0")
+declare -a BASH_SOURCE=([0]="/pash/pash/compiler/pash_declare_vars.sh" [1]="/pash/pash/compiler/pash_runtime.sh" [2]="/tmp/pash_BAAI6kR/tmp0g6vhek4")
+declare -- BASH_SUBSHELL
+declare -ar BASH_VERSINFO=([0]="4" [1]="4" [2]="20" [3]="1" [4]="release" [5]="x86_64-pc-linux-gnu")
+declare -- BASH_VERSION="4.4.20(1)-release"
+declare -- COMP_WORDBREAKS
+declare -x DAEMON_SOCKET="/tmp/pash_BAAI6kR//daemon_socket"
+declare -x DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1006/bus"
+declare -a DIRSTACK=()
+declare -ir EUID="1006"
+declare -x EXP_EXEC_LIBRARY="/pash/posix/tet3.8/vsc/Src/ImplSpec"
+declare -x EXP_LIBRARY="/pash/posix/tet3.8/vsc/Lib"
+declare -a FUNCNAME
+declare -a GROUPS=()
+declare -i HISTCMD
+declare -x HOME="/home/mgree"
+declare -- HOSTNAME="antikythera"
+declare -- HOSTTYPE="x86_64"
+declare -- IFS=" 	
+"
+declare -x IGNORE_ERROUT="8"
+declare -x IGNORE_OUTPUT="4"
+declare -x IGNORE_STATUS="2"
+declare -x LANG="POSIX"
+declare -x LC_ALL="POSIX"
+declare -x LD_LIBRARY_PATH=":/usr/local/lib/"
+declare -x LESSCLOSE="/usr/bin/lesspipe %s %s"
+declare -x LESSOPEN="| /usr/bin/lesspipe %s"
+declare -x LIBVIRT_DEFAULT_URI="qemu:///system"
+declare -i LINENO
+declare -x LOGNAME="mgree"
+declare -x LS_COLORS="rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:"
+declare -- MACHTYPE="x86_64-pc-linux-gnu"
+declare -x MACROLIB="/pash/posix/tet3.8/vsc/Src/GA/CtgenMacros"
+declare -x MAIL="/var/mail/mgree"
+declare -x NEGATIVE_TEST="1"
+declare -- NEG_CHK="1"
+declare -x NULL="NULL"
+declare -x OLDPWD="/pash/pash"
+declare -- OPTERR="1"
+declare -i OPTIND="1"
+declare -- OSTYPE="linux-gnu"
+declare -x PASH_DEBUG_LEVEL="0"
+declare -x PASH_FROM_SH="pa.sh"
+declare -x PASH_REDIR="&2"
+declare -x PASH_TMP_PREFIX="/tmp/pash_BAAI6kR/"
+declare -x PASH_TOP="/pash/pash"
+declare -x PATH="/home/mgree/.local/bin:/pash/posix/tet3.8/vsc/Bin:/pash/posix/tet3.8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:."
+declare -a PIPESTATUS=([0]="0")
+declare -- POS_CHK="0"
+declare -ir PPID="6149"
+declare -- PS4="+ "
+declare -x PWD="/pash/posix/tet3.8/vsc/tet_tmp_dir/06120aa/tset/POSIX.shell/shell"
+declare -x PYTHONPATH="/pash/pash/python_pkgs/"
+declare -i RANDOM
+declare -x RUNTIME_DIR="/pash/pash/compiler"
+declare -x RUNTIME_IN_FIFO="/tmp/pash_BAAI6kR//runtime_in_fifo"
+declare -x RUNTIME_LIBRARY_DIR="/pash/pash/compiler/../runtime/"
+declare -x RUNTIME_OUT_FIFO="/tmp/pash_BAAI6kR//runtime_out_fifo"
+declare -- SECONDS
+declare -x SHELL="/bin/bash"
+declare -r SHELLOPTS="braceexpand:hashall:interactive-comments"
+declare -x SHLVL="4"
+declare -x SSH_CLIENT="68.192.246.166 50980 22"
+declare -x SSH_CONNECTION="68.192.246.166 50980 128.30.64.121 22"
+declare -x SSH_TTY="/dev/pts/0"
+declare -x STY="17308.posix"
+declare -x TCL_LIBRARY="/pash/posix/tet3.8/vsc/Src/Interact/tcl/library"
+declare -x TERM="screen"
+declare -x TERMCAP="SC|screen|VT 100/ANSI X3.64 virtual terminal:\\
+	:DO=\\E[%dB:LE=\\E[%dD:RI=\\E[%dC:UP=\\E[%dA:bs:bt=\\E[Z:\\
+	:cd=\\E[J:ce=\\E[K:cl=\\E[H\\E[J:cm=\\E[%i%d;%dH:ct=\\E[3g:\\
+	:do=^J:nd=\\E[C:pt:rc=\\E8:rs=\\Ec:sc=\\E7:st=\\EH:up=\\EM:\\
+	:le=^H:bl=^G:cr=^M:it#8:ho=\\E[H:nw=\\EE:ta=^I:is=\\E)0:\\
+	:li#24:co#80:am:xn:xv:LP:sr=\\EM:al=\\E[L:AL=\\E[%dL:\\
+	:cs=\\E[%i%d;%dr:dl=\\E[M:DL=\\E[%dM:dc=\\E[P:DC=\\E[%dP:\\
+	:im=\\E[4h:ei=\\E[4l:mi:IC=\\E[%d@:ks=\\E[?1h\\E=:\\
+	:ke=\\E[?1l\\E>:vi=\\E[?25l:ve=\\E[34h\\E[?25h:vs=\\E[34l:\\
+	:ti=\\E[?1049h:te=\\E[?1049l:Km=\\E[M:k0=\\E[10~:k1=\\EOP:\\
+	:k2=\\EOQ:k3=\\EOR:k4=\\EOS:k5=\\E[15~:k6=\\E[17~:k7=\\E[18~:\\
+	:k8=\\E[19~:k9=\\E[20~:k;=\\E[21~:F1=\\E[23~:F2=\\E[24~:\\
+	:kh=\\E[1~:@1=\\E[1~:kH=\\E[4~:@7=\\E[4~:kN=\\E[6~:kP=\\E[5~:\\
+	:kI=\\E[2~:kD=\\E[3~:ku=\\EOA:kd=\\EOB:kr=\\EOC:kl=\\EOD:"
+declare -x TERMIN_EXP="/pash/posix/tet3.8/vsc/Lib/termin.exp"
+declare -x TET_ACTIVITY="0"
+declare -x TET_CODE="/var/tmp/tccAAA6120"
+declare -x TET_CONFIG="/var/tmp/tccAAB6120"
+declare -x TET_EXECUTE=""
+declare -x TET_FAIL="FAIL"
+declare -x TET_FATAL="FATAL"
+declare -x TET_INSPECT="INSPECT"
+declare -x TET_NORESULT="NORESULT"
+declare -x TET_NOTINUSE="NOTINUSE"
+declare -x TET_NOT_IMPLEMENTED="NOT_IMPLEMENTED"
+declare -x TET_PASS="PASS"
+declare -x TET_ROOT="/pash/posix/tet3.8"
+declare -x TET_RUN=""
+declare -x TET_SUITE_ROOT="/pash/posix/tet3.8"
+declare -x TET_TIARGS=""
+declare -x TET_UNAPPROVED_ASSERTION="UNAPPROVED_ASSERTION"
+declare -x TET_UNINITIATED="UNINITIATED"
+declare -x TET_UNRESOLVED="UNRESOLVED"
+declare -x TET_UNSUPPORTED="UNSUPPORTED"
+declare -x TET_UNTESTED="UNTESTED"
+declare -x TS_BIN="/pash/posix/tet3.8/vsc/Bin"
+declare -x TS_GAINC="/pash/posix/tet3.8/vsc/Inc/GA"
+declare -x TS_INC="/pash/posix/tet3.8/vsc/Inc"
+declare -x TS_LIB="/pash/posix/tet3.8/vsc/Lib"
+declare -x TS_LIBTK="/pash/posix/tet3.8/vsc/Shlib"
+declare -x TS_ROOT="/pash/posix/tet3.8/vsc"
+declare -x TS_SHLIB="/pash/posix/tet3.8/vsc/Shlib"
+declare -ir UID="1006"
+declare -x USER="mgree"
+declare -- VSC_JRNL_LINES="100"
+declare -x VSC_ROOT="/pash/posix/tet3.8/vsc"
+declare -x WINDOW="0"
+declare -x XDG_DATA_DIRS="/usr/local/share:/usr/share:/var/lib/snapd/desktop"
+declare -x XDG_RUNTIME_DIR="/run/user/1006"
+declare -x XDG_SESSION_ID="29"
+declare -- _="Writing vars to: /tmp/pash_BAAI6kR//pash_j95Qt85IOW"
+declare -- _JrnlLen_="350"
+declare -- daemon_response=""
+declare -x distro="ubuntu"
+declare -- from_set="huBc"
+declare -- internal_exec_status="0"
+declare -- msg="Exit:1"
+declare -x pash_assert_compiler_success_flag="0"
+declare -x pash_avoid_pash_runtime_completion_flag="0"
+declare -x pash_checking_debug_level="0"
+declare -x pash_checking_log_file="0"
+declare -x pash_checking_speculation="0"
+declare -- pash_compiled_script_file="/tmp/pash_BAAI6kR//pash_Bwwrfg2gjs"
+declare -x pash_current_set_state="huBc"
+declare -x pash_daemon="1"
+declare -x pash_daemon_communicates_through_unix_pipes_flag="0"
+declare -- pash_default_set_state="huB"
+declare -- pash_disable_parallel_pipelines="0"
+declare -x pash_dry_run_compiler_flag="0"
+declare -- pash_exec_time_start="1637621732503720828"
+declare -x pash_execute_flag="1"
+declare -x pash_input_args="1-1000"
+declare -- pash_input_ir_file="/tmp/pash_BAAI6kR/tmpw9ls1w15"
+declare -x pash_output_time_flag="1"
+declare -x pash_parallel_pipelines="1"
+declare -x pash_previous_exit_status="0"
+declare -x pash_previous_set_status="hBc"
+declare -- pash_runtime_final_status="0"
+declare -- pash_runtime_return_code="1"
+declare -- pash_runtime_shell_variables_file="/tmp/pash_BAAI6kR//pash_j95Qt85IOW"
+declare -- pash_script_to_execute="/tmp/pash_BAAI6kR/tmpq47mv37s"
+declare -- pash_sequential_script_file="/tmp/pash_BAAI6kR/tmpq47mv37s"
+declare -- pash_set_to_add=""
+declare -- pash_set_to_remove="u"
+declare -x pash_shell_name="sh_09.ex"
+declare -x pash_speculation_flag="0"
+declare -- process_id="1"
+declare -a response_args=([0]="ERROR:" [1]="1" [2]="failed" [3]="to" [4]="compile")
+declare -- script_source="/tmp/pash_BAAI6kR/tmpq47mv37s"
+declare -- to_set="hBc"
+declare -- traps_set=""
+declare -- vars_file="/tmp/pash_BAAI6kR//pash_j95Qt85IOW"
+CheckResults () 
+{ 
+    $CAL_TRACE;
+    if [ `expr $6 / $NEGATIVE_TEST % 2` -eq 1 ]; then
+        if [ `expr $6 / $IGNORE_STATUS % 2` -eq 1 ] || [ $1 -ne 0 ]; then
+            if [ `expr $6 / $IGNORE_ERROUT % 2` -eq 1 ] || [ -s $4 ]; then
+                if [ `expr $6 / $IGNORE_OUTPUT % 2` -eq 1 ] || [ -f $3 ] && [ ! -s $3 ]; then
+                    return 0;
+                else
+                    JrnlMsg "Results file size is non-zero and expected zero.";
+                    return 3;
+                fi;
+            else
+                JrnlMsg "Error file size is zero and expected non-zero.";
+                return 2;
+            fi;
+        else
+            JrnlMsg "Return status is zero and expected non-zero.";
+            return 1;
+        fi;
+    else
+        if [ `expr $6 / $IGNORE_OUTPUT % 2` -eq 1 ] || EqualFiles $3 $4; then
+            if [ `expr $6 / $IGNORE_STATUS % 2` -eq 1 ] || [ $1 -eq $2 ]; then
+                if [ `expr $6 / $IGNORE_ERROUT % 2` -eq 1 ] || [ -f $5 ] && [ ! -s $5 ]; then
+                    return 0;
+                else
+                    JrnlMsg "Error file size is non-zero and expected zero.";
+                    return 3;
+                fi;
+            else
+                JrnlMsg "Return status does not match expected return status.";
+                LogFailure $2 $1;
+                return 2;
+            fi;
+        else
+            JrnlMsg "Results file does not match expected results file.";
+            return 1;
+        fi;
+    fi
+}
+CloseTP () 
+{ 
+    $CAL_TRACE;
+    __inspectmsg=;
+    exit
+}
+CreateFileName () 
+{ 
+    $CAL_TRACE;
+    if [ $# -eq 0 ]; then
+        _FileName="";
+    fi;
+    if [ $# -eq 4 ]; then
+        _FileName=$1_$2_$3.$4;
+    else
+        _FileName=$1_$2_$3;
+    fi;
+    if [ -z "$SHORT_FILENAMES" ]; then
+        echo $_FileName;
+    else
+        _CompressFileName_ $_FileName;
+    fi
+}
+CreateTextFile () 
+{ 
+    $CAL_TRACE;
+    echo "$3" > $1;
+    chmod $2 $1
+}
+EqualFiles () 
+{ 
+    $CAL_TRACE;
+    if [ ! -r $1 ]; then
+        LogWarning "EqualFiles: Unable to open file" $1 "for comparison";
+        if [ ! -r $2 ]; then
+            LogWarning "EqualFiles: Unable to open file" $2 "for comparison";
+        fi;
+        return 1;
+    else
+        if [ ! -r $2 ]; then
+            LogWarning "EqualFiles: Unable to open file" $2 "for comparison";
+            return 1;
+        else
+            cmp -s $1 $2;
+            return $?;
+        fi;
+    fi
+}
+ExecCmdPriv () 
+{ 
+    $CAL_TRACE;
+    ExecuteCommand "setpriv $5 $6 $1" $2 $3 $4
+}
+ExecuteCommand () 
+{ 
+    $CAL_TRACE;
+    _cmdLine=$1;
+    _stdin=$2;
+    _stdout=$3;
+    _stderr=$4;
+    if [ "$2" = "NULL" ]; then
+        _stdin="/dev/null";
+    fi;
+    if [ "$3" = "NULL" ]; then
+        _stdout="/dev/null";
+    fi;
+    if [ "$4" = "NULL" ]; then
+        _stderr="/dev/null";
+    fi;
+    eval $_cmdLine < $_stdin > $_stdout 2> $_stderr
+}
+FindCommand () 
+{ 
+    $CAL_TRACE;
+    IFS=:;
+    for i in $PATH;
+    do
+        if [ -x $i/$1 ] && [ ! -d $i/$1 ]; then
+            echo $i/$1;
+            return 0;
+        fi;
+    done;
+    echo $1;
+    return 255
+}
+GetLocale () 
+{ 
+    $CAL_TRACE;
+    _count=`_ArgCount_ $TET_LOCALES`;
+    if [ $_count -eq 0 ]; then
+        _locales="";
+        return 255;
+    else
+        _locales=$TET_LOCALES;
+        return $_count;
+    fi
+}
+InspectOnError () 
+{ 
+    $CAL_TRACE;
+    if [ "$1" = "-off" ]; then
+        __inspectmsg=;
+        return;
+    fi;
+    if [ "$1" = "-interp" ]; then
+        __inspectmsg="VSC ignores this error due to $2. Once this issue is resolved, the required behavior will be tested.";
+        return;
+    fi;
+    __inspectmsg=$*
+}
+JrnlDiff () 
+{ 
+    $CAL_TRACE;
+    if [ ! -r "$1" ]; then
+        LogError "JrnlDiff: unable to open or read file \"$1\".";
+        return 1;
+    else
+        if [ ! -r "$2" ]; then
+            LogError "JrnlDiff: unable to open or read file \"$2\".";
+            return 1;
+        fi;
+    fi;
+    diff -c $1 $2 > _JrnlDiffFile 2>&1;
+    if [ $? -gt 1 ]; then
+        LogError "JrnlDiff: Cannot diff \"$1\" and \"$2\".";
+        JrnlFile _JrnlDiffFile;
+        return 1;
+    fi;
+    _lc=`wc -l < _JrnlDiffFile`;
+    _lc=`echo $_lc`;
+    if [ "$_lc" -gt "$VSC_JRNL_LINES" ]; then
+        JrnlMsg "First $VSC_JRNL_LINES lines of diff of \"$1\" and \"$2\":";
+        _JrnlFile _JrnlDiffFile $VSC_JRNL_LINES;
+    else
+        JrnlMsg "diff of \"$1\" and \"$2\":";
+        _JrnlFile _JrnlDiffFile 0;
+    fi;
+    rm _JrnlDiffFile;
+    return 0
+}
+JrnlFile () 
+{ 
+    $CAL_TRACE;
+    if [ ! -r "$1" ]; then
+        LogError "JrnlFile: unable to open or read file \"$1\".";
+        return 1;
+    fi;
+    _jfile_=$1;
+    tet_infoline "Contents of $_jfile_:";
+    _JrnlFile $_jfile_ $VSC_JRNL_LINES;
+    return 0
+}
+JrnlMsg () 
+{ 
+    $CAL_TRACE;
+    tet_infoline "$*"
+}
+LogError () 
+{ 
+    $CAL_TRACE;
+    JrnlMsg "*ERROR -" $*
+}
+LogFailure () 
+{ 
+    $CAL_TRACE;
+    JrnlMsg "Expected return: ($1), Actual return: ($2)"
+}
+LogWarning () 
+{ 
+    $CAL_TRACE;
+    JrnlMsg "*WARNING -" $*
+}
+OpenTP () 
+{ 
+    $CAL_TRACE;
+    OPENTP=1;
+    JrnlMsg "Assertion #$2 ($3): $4";
+    _testCmd=`FindCommand $1`;
+    echo $_testCmd;
+    if [ -z "$_testCmd" ]; then
+        LogError "$1 not found in search path:";
+        JrnlMsg "$PATH";
+        tet_result $TET_FAIL;
+        tet_setblock;
+        return 1;
+    fi;
+    return 0
+}
+SetResult () 
+{ 
+    $CAL_TRACE;
+    __result=$1;
+    if [ -n "$__inspectmsg" ] && [ "$__result" != $TET_PASS ]; then
+        tet_result $TET_PASS;
+        JrnlMsg "WARNING: $__inspectmsg";
+        if [ ! -z "$2" ]; then
+            JrnlMsg "$2";
+        fi;
+    else
+        tet_result $__result;
+        if [ ! -z "$2" ]; then
+            JrnlMsg "$2";
+        fi;
+    fi
+}
+SetupLocale () 
+{ 
+    $CAL_TRACE;
+    _count=`_ArgCount_ $_locales`;
+    LANG=${_locales%% *};
+    if [ `_ArgCount_ $_locales` -gt 1 ]; then
+        _locales=${_locales#* };
+    else
+        _locales="";
+    fi;
+    return
+}
+TraceMsg () 
+{ 
+    if [ $# -le 1 ]; then
+        JrnlMsg "*WARNING - TraceMsg: called without parameters";
+        return 1;
+    fi;
+    case $TMSG_LEVEL in 
+        TMSG_TERSE | TMSG_SHORT | TMSG_VERBOSE | TMSG_DEBUG)
+
+        ;;
+        *)
+            JrnlMsg "WARNING - TraceMsg: Invalid TMSG_LEVEL \"$TMSG_LEVEL\"";
+            return 2
+        ;;
+    esac;
+    case $1 in 
+        TMSG_TERSE)
+            shift;
+            JrnlMsg $@
+        ;;
+        TMSG_SHORT)
+            case $TMSG_LEVEL in 
+                TMSG_SHORT | TMSG_VERBOSE | TMSG_DEBUG)
+                    shift;
+                    JrnlMsg $@
+                ;;
+                *)
+
+                ;;
+            esac
+        ;;
+        TMSG_VERBOSE)
+            case $TMSG_LEVEL in 
+                TMSG_VERBOSE | TMSG_DEBUG)
+                    shift;
+                    JrnlMsg $@
+                ;;
+                *)
+
+                ;;
+            esac
+        ;;
+        TMSG_DEBUG)
+            case $TMSG_LEVEL in 
+                TMSG_DEBUG)
+                    shift;
+                    JrnlMsg $@
+                ;;
+                *)
+
+                ;;
+            esac
+        ;;
+        *)
+            echo "Error: Invalid level \"$1\" given." 1>&2;
+            return 2
+        ;;
+    esac;
+    return 0
+}
+_ArgCount_ () 
+{ 
+    $CAL_TRACE;
+    echo $#
+}
+_CompressFileName_ () 
+{ 
+    $CAL_TRACE;
+    echo $1
+}
+_JrnlFile () 
+{ 
+    $CAL_TRACE;
+    SaveIFS="$IFS";
+    _jfile_=$1;
+    _lim=$2;
+    if [ "X$_lim" = "X" ] || [ $_lim -eq 0 ] || [ -z "$_lim" ]; then
+        _lim=9999999;
+    fi;
+    IFS="";
+    _jrnl_ct=0;
+    while read -r _jrnl_line_; do
+        tet_infoline "$_jrnl_line_";
+        _jrnl_ct=$(( $_jrnl_ct + 1));
+        if [ $_jrnl_ct -ge $_lim ]; then
+            tet_infoline "...omitting remaining lines.";
+            break;
+        fi;
+    done < $_jfile_;
+    IFS="$SaveIFS"
+}
+clean_up () 
+{ 
+    if [ "$pash_daemon" -eq 1 ]; then
+        msg="Exit:${process_id}";
+        daemon_response=$(pash_communicate_daemon_just_send "$msg");
+    fi
+}
+final_steps () 
+{ 
+    if [ "$PASH_DEBUG_LEVEL" -ne 0 ] && [ "$pash_avoid_pash_runtime_completion_flag" -ne 1 ]; then
+        pash_output_var_file="$($RUNTIME_DIR/pash_ptempfile_name.sh $distro)";
+        pash_output_set_file="$($RUNTIME_DIR/pash_ptempfile_name.sh $distro)";
+        source "$RUNTIME_DIR/pash_runtime_shell_to_pash.sh" ${pash_output_var_file} ${pash_output_set_file};
+        source "$RUNTIME_DIR/pash_runtime_complete_execution.sh";
+    fi
+}
+pash_communicate_daemon () 
+{ 
+    local message=$1;
+    pash_redir_output echo "Sending msg to daemon: $message";
+    daemon_response=$(echo "$message" | nc -U "$DAEMON_SOCKET");
+    pash_redir_output echo "Got response from daemon: $daemon_response";
+    echo "$daemon_response"
+}
+declare -fx pash_communicate_daemon
+pash_communicate_daemon_just_send () 
+{ 
+    pash_communicate_daemon $1
+}
+declare -fx pash_communicate_daemon_just_send
+pash_redir_all_output () 
+{ 
+    :
+}
+declare -fx pash_redir_all_output
+pash_redir_all_output_always_execute () 
+{ 
+    $@ > /dev/null 2>&1
+}
+declare -fx pash_redir_all_output_always_execute
+pash_redir_output () 
+{ 
+    :
+}
+declare -fx pash_redir_output
+pash_wait_until_daemon_listening () 
+{ 
+    while ! nc -z -U "$DAEMON_SOCKET" > /dev/null 2>&1; do
+        sleep 0.01;
+    done
+}
+declare -fx pash_wait_until_daemon_listening
+run_parallel () 
+{ 
+    trap clean_up SIGTERM SIGINT EXIT;
+    source "$RUNTIME_DIR/pash_wrap_vars.sh" ${pash_script_to_execute};
+    internal_exec_status=$?;
+    final_steps;
+    clean_up;
+    ( exit $internal_exec_status )
+}
+
+declare -- BASH="/bin/bash"
+declare -r BASHOPTS="cmdhist:complete_fullquote:extquote:force_fignore:hostcomplete:interactive_comments:progcomp:promptvars:sourcepath"
+declare -ir BASHPID
+declare -A BASH_ALIASES=()
+declare -a BASH_ARGC=([0]="1" [1]="1")
+declare -a BASH_ARGV=([0]="/tmp/pash_BAAI6kR/tmp0g6vhek4" [1]="1-1000")
+declare -A BASH_CMDS=()
+declare -- BASH_COMMAND
+declare -- BASH_EXECUTION_STRING="source /tmp/pash_BAAI6kR/tmp0g6vhek4"
+declare -a BASH_LINENO=([0]="86" [1]="136" [2]="0")
+declare -a BASH_SOURCE=([0]="/pash/pash/compiler/pash_declare_vars.sh" [1]="/pash/pash/compiler/pash_runtime.sh" [2]="/tmp/pash_BAAI6kR/tmp0g6vhek4")
+declare -- BASH_SUBSHELL
+declare -ar BASH_VERSINFO=([0]="4" [1]="4" [2]="20" [3]="1" [4]="release" [5]="x86_64-pc-linux-gnu")
+declare -- BASH_VERSION="4.4.20(1)-release"
+declare -- COMP_WORDBREAKS
+declare -x DAEMON_SOCKET="/tmp/pash_BAAI6kR//daemon_socket"
+declare -x DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1006/bus"
+declare -a DIRSTACK=()
+declare -ir EUID="1006"
+declare -x EXP_EXEC_LIBRARY="/pash/posix/tet3.8/vsc/Src/ImplSpec"
+declare -x EXP_LIBRARY="/pash/posix/tet3.8/vsc/Lib"
+declare -a FUNCNAME
+declare -a GROUPS=()
+declare -i HISTCMD
+declare -x HOME="/home/mgree"
+declare -- HOSTNAME="antikythera"
+declare -- HOSTTYPE="x86_64"
+declare -- IFS=" 	
+"
+declare -x IGNORE_ERROUT="8"
+declare -x IGNORE_OUTPUT="4"
+declare -x IGNORE_STATUS="2"
+declare -x LANG="POSIX"
+declare -x LC_ALL="POSIX"
+declare -x LD_LIBRARY_PATH=":/usr/local/lib/"
+declare -x LESSCLOSE="/usr/bin/lesspipe %s %s"
+declare -x LESSOPEN="| /usr/bin/lesspipe %s"
+declare -x LIBVIRT_DEFAULT_URI="qemu:///system"
+declare -i LINENO
+declare -x LOGNAME="mgree"
+declare -x LS_COLORS="rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:"
+declare -- MACHTYPE="x86_64-pc-linux-gnu"
+declare -x MACROLIB="/pash/posix/tet3.8/vsc/Src/GA/CtgenMacros"
+declare -x MAIL="/var/mail/mgree"
+declare -x NEGATIVE_TEST="1"
+declare -- NEG_CHK="1"
+declare -x NULL="NULL"
+declare -x OLDPWD="/pash/pash"
+declare -- OPTERR="1"
+declare -i OPTIND="1"
+declare -- OSTYPE="linux-gnu"
+declare -x PASH_DEBUG_LEVEL="0"
+declare -x PASH_FROM_SH="pa.sh"
+declare -x PASH_REDIR="&2"
+declare -x PASH_TMP_PREFIX="/tmp/pash_BAAI6kR/"
+declare -x PASH_TOP="/pash/pash"
+declare -x PATH="/home/mgree/.local/bin:/pash/posix/tet3.8/vsc/Bin:/pash/posix/tet3.8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:."
+declare -a PIPESTATUS=([0]="0")
+declare -- POS_CHK="0"
+declare -ir PPID="6149"
+declare -- PS4="+ "
+declare -x PWD="/pash/posix/tet3.8/vsc/tet_tmp_dir/06120aa/tset/POSIX.shell/shell"
+declare -x PYTHONPATH="/pash/pash/python_pkgs/"
+declare -i RANDOM
+declare -x RUNTIME_DIR="/pash/pash/compiler"
+declare -x RUNTIME_IN_FIFO="/tmp/pash_BAAI6kR//runtime_in_fifo"
+declare -x RUNTIME_LIBRARY_DIR="/pash/pash/compiler/../runtime/"
+declare -x RUNTIME_OUT_FIFO="/tmp/pash_BAAI6kR//runtime_out_fifo"
+declare -- SECONDS
+declare -x SHELL="/bin/bash"
+declare -r SHELLOPTS="braceexpand:hashall:interactive-comments"
+declare -x SHLVL="4"
+declare -x SSH_CLIENT="68.192.246.166 50980 22"
+declare -x SSH_CONNECTION="68.192.246.166 50980 128.30.64.121 22"
+declare -x SSH_TTY="/dev/pts/0"
+declare -x STY="17308.posix"
+declare -x TCL_LIBRARY="/pash/posix/tet3.8/vsc/Src/Interact/tcl/library"
+declare -x TERM="screen"
+declare -x TERMCAP="SC|screen|VT 100/ANSI X3.64 virtual terminal:\\
+	:DO=\\E[%dB:LE=\\E[%dD:RI=\\E[%dC:UP=\\E[%dA:bs:bt=\\E[Z:\\
+	:cd=\\E[J:ce=\\E[K:cl=\\E[H\\E[J:cm=\\E[%i%d;%dH:ct=\\E[3g:\\
+	:do=^J:nd=\\E[C:pt:rc=\\E8:rs=\\Ec:sc=\\E7:st=\\EH:up=\\EM:\\
+	:le=^H:bl=^G:cr=^M:it#8:ho=\\E[H:nw=\\EE:ta=^I:is=\\E)0:\\
+	:li#24:co#80:am:xn:xv:LP:sr=\\EM:al=\\E[L:AL=\\E[%dL:\\
+	:cs=\\E[%i%d;%dr:dl=\\E[M:DL=\\E[%dM:dc=\\E[P:DC=\\E[%dP:\\
+	:im=\\E[4h:ei=\\E[4l:mi:IC=\\E[%d@:ks=\\E[?1h\\E=:\\
+	:ke=\\E[?1l\\E>:vi=\\E[?25l:ve=\\E[34h\\E[?25h:vs=\\E[34l:\\
+	:ti=\\E[?1049h:te=\\E[?1049l:Km=\\E[M:k0=\\E[10~:k1=\\EOP:\\
+	:k2=\\EOQ:k3=\\EOR:k4=\\EOS:k5=\\E[15~:k6=\\E[17~:k7=\\E[18~:\\
+	:k8=\\E[19~:k9=\\E[20~:k;=\\E[21~:F1=\\E[23~:F2=\\E[24~:\\
+	:kh=\\E[1~:@1=\\E[1~:kH=\\E[4~:@7=\\E[4~:kN=\\E[6~:kP=\\E[5~:\\
+	:kI=\\E[2~:kD=\\E[3~:ku=\\EOA:kd=\\EOB:kr=\\EOC:kl=\\EOD:"
+declare -x TERMIN_EXP="/pash/posix/tet3.8/vsc/Lib/termin.exp"
+declare -x TET_ACTIVITY="0"
+declare -x TET_CODE="/var/tmp/tccAAA6120"
+declare -x TET_CONFIG="/var/tmp/tccAAB6120"
+declare -x TET_EXECUTE=""
+declare -x TET_FAIL="FAIL"
+declare -x TET_FATAL="FATAL"
+declare -x TET_INSPECT="INSPECT"
+declare -x TET_NORESULT="NORESULT"
+declare -x TET_NOTINUSE="NOTINUSE"
+declare -x TET_NOT_IMPLEMENTED="NOT_IMPLEMENTED"
+declare -x TET_PASS="PASS"
+declare -x TET_ROOT="/pash/posix/tet3.8"
+declare -x TET_RUN=""
+declare -x TET_SUITE_ROOT="/pash/posix/tet3.8"
+declare -x TET_TIARGS=""
+declare -x TET_UNAPPROVED_ASSERTION="UNAPPROVED_ASSERTION"
+declare -x TET_UNINITIATED="UNINITIATED"
+declare -x TET_UNRESOLVED="UNRESOLVED"
+declare -x TET_UNSUPPORTED="UNSUPPORTED"
+declare -x TET_UNTESTED="UNTESTED"
+declare -x TS_BIN="/pash/posix/tet3.8/vsc/Bin"
+declare -x TS_GAINC="/pash/posix/tet3.8/vsc/Inc/GA"
+declare -x TS_INC="/pash/posix/tet3.8/vsc/Inc"
+declare -x TS_LIB="/pash/posix/tet3.8/vsc/Lib"
+declare -x TS_LIBTK="/pash/posix/tet3.8/vsc/Shlib"
+declare -x TS_ROOT="/pash/posix/tet3.8/vsc"
+declare -x TS_SHLIB="/pash/posix/tet3.8/vsc/Shlib"
+declare -ir UID="1006"
+declare -x USER="mgree"
+declare -- VSC_COMMAND_UNDER_TEST="sh_09"
+declare -x VSC_ERROR="2"
+declare -x VSC_FAILURE="1"
+declare -- VSC_JRNL_LINES="100"
+declare -x VSC_PASS
+declare -x VSC_ROOT="/pash/posix/tet3.8/vsc"
+declare -- VSC_SUCCESS="0"
+declare -- VSC_VARS_H="True"
+declare -x WINDOW="0"
+declare -x XDG_DATA_DIRS="/usr/local/share:/usr/share:/var/lib/snapd/desktop"
+declare -x XDG_RUNTIME_DIR="/run/user/1006"
+declare -x XDG_SESSION_ID="29"
+declare -- _="Writing vars to: /tmp/pash_BAAI6kR//pash_lBVj68hVTE"
+declare -- _JrnlLen_="350"
+declare -- daemon_response=""
+declare -x distro="ubuntu"
+declare -- from_set="huBc"
+declare -- ic506="tp506"
+declare -- ic507="tp507"
+declare -- ic508="tp508"
+declare -- ic509="tp509"
+declare -- ic510="tp510"
+declare -- ic511="tp511"
+declare -- ic512="tp512"
+declare -- ic513="tp513"
+declare -- ic514="tp514"
+declare -- ic515="tp515"
+declare -- ic516="tp516"
+declare -- ic517="tp517"
+declare -- ic518="tp518"
+declare -- ic519="tp519"
+declare -- ic520="tp520"
+declare -- ic521="tp521"
+declare -- ic522="tp522"
+declare -- ic523="tp523"
+declare -- ic524="tp524"
+declare -- ic525="tp525"
+declare -- ic526="tp526"
+declare -- ic527="tp527"
+declare -- ic528="tp528"
+declare -- ic529="tp529"
+declare -- ic530="tp530"
+declare -- ic531="tp531"
+declare -- ic532="tp532"
+declare -- ic533="tp533"
+declare -- ic534="tp534"
+declare -- ic535="tp535"
+declare -- ic536="tp536"
+declare -- ic537="tp537"
+declare -- ic538="tp538"
+declare -- ic539="tp539"
+declare -- ic540="tp540"
+declare -- ic541="tp541"
+declare -- ic542="tp542"
+declare -- ic543="tp543"
+declare -- ic544="tp544"
+declare -- ic545="tp545"
+declare -- ic546="tp546"
+declare -- ic547="tp547"
+declare -- ic548="tp548"
+declare -- ic549="tp549"
+declare -- ic550="tp550"
+declare -- ic569="tp569"
+declare -- ic570="tp570"
+declare -- ic571="tp571"
+declare -- ic575="tp575"
+declare -- ic576="tp576"
+declare -- ic577="tp577"
+declare -- ic578="tp578"
+declare -- ic579="tp579"
+declare -- ic580="tp580"
+declare -- ic581="tp581"
+declare -- ic582="tp582"
+declare -- iclist="ic506 ic507 ic508 ic509 ic510 ic511 ic512 ic513 ic514 ic515 ic516 ic517 ic518 ic519 ic520 ic521 ic522 ic523 ic524 ic525 ic526 ic527 ic528 ic529 ic530 ic531 ic532 ic533 ic534 ic535 ic536 ic537 ic538 ic539 ic540 ic541 ic542 ic543 ic544 ic545 ic546 ic547 ic548 ic549 ic550 ic569 ic570 ic571 ic575 ic576 ic577 ic578 ic579 ic580 ic581 ic582"
+declare -- internal_exec_status="0"
+declare -- msg="Exit:2"
+declare -x pash_assert_compiler_success_flag="0"
+declare -x pash_avoid_pash_runtime_completion_flag="0"
+declare -x pash_checking_debug_level="0"
+declare -x pash_checking_log_file="0"
+declare -x pash_checking_speculation="0"
+declare -- pash_compiled_script_file="/tmp/pash_BAAI6kR//pash_NoyWyZIYXO"
+declare -x pash_current_set_state="huBc"
+declare -x pash_daemon="1"
+declare -x pash_daemon_communicates_through_unix_pipes_flag="0"
+declare -- pash_default_set_state="huB"
+declare -- pash_disable_parallel_pipelines="0"
+declare -x pash_dry_run_compiler_flag="0"
+declare -- pash_exec_time_start="1637621732527144292"
+declare -x pash_execute_flag="1"
+declare -x pash_input_args="1-1000"
+declare -- pash_input_ir_file="/tmp/pash_BAAI6kR/tmp7ycdgei4"
+declare -x pash_output_time_flag="1"
+declare -x pash_parallel_pipelines="1"
+declare -x pash_previous_exit_status="0"
+declare -x pash_previous_set_status="hBc"
+declare -- pash_runtime_final_status="0"
+declare -- pash_runtime_return_code="1"
+declare -- pash_runtime_shell_variables_file="/tmp/pash_BAAI6kR//pash_lBVj68hVTE"
+declare -- pash_script_to_execute="/tmp/pash_BAAI6kR/tmpjclhpyeo"
+declare -- pash_sequential_script_file="/tmp/pash_BAAI6kR/tmpjclhpyeo"
+declare -- pash_set_to_add=""
+declare -- pash_set_to_remove="u"
+declare -x pash_shell_name="sh_09.ex"
+declare -x pash_speculation_flag="0"
+declare -- process_id="2"
+declare -a response_args=([0]="ERROR:" [1]="2" [2]="failed" [3]="to" [4]="compile")
+declare -- script_source="/tmp/pash_BAAI6kR/tmpjclhpyeo"
+declare -- to_set="hBc"
+declare -- traps_set=""
+declare -- vars_file="/tmp/pash_BAAI6kR//pash_lBVj68hVTE"
+CheckResults () 
+{ 
+    $CAL_TRACE;
+    if [ `expr $6 / $NEGATIVE_TEST % 2` -eq 1 ]; then
+        if [ `expr $6 / $IGNORE_STATUS % 2` -eq 1 ] || [ $1 -ne 0 ]; then
+            if [ `expr $6 / $IGNORE_ERROUT % 2` -eq 1 ] || [ -s $4 ]; then
+                if [ `expr $6 / $IGNORE_OUTPUT % 2` -eq 1 ] || [ -f $3 ] && [ ! -s $3 ]; then
+                    return 0;
+                else
+                    JrnlMsg "Results file size is non-zero and expected zero.";
+                    return 3;
+                fi;
+            else
+                JrnlMsg "Error file size is zero and expected non-zero.";
+                return 2;
+            fi;
+        else
+            JrnlMsg "Return status is zero and expected non-zero.";
+            return 1;
+        fi;
+    else
+        if [ `expr $6 / $IGNORE_OUTPUT % 2` -eq 1 ] || EqualFiles $3 $4; then
+            if [ `expr $6 / $IGNORE_STATUS % 2` -eq 1 ] || [ $1 -eq $2 ]; then
+                if [ `expr $6 / $IGNORE_ERROUT % 2` -eq 1 ] || [ -f $5 ] && [ ! -s $5 ]; then
+                    return 0;
+                else
+                    JrnlMsg "Error file size is non-zero and expected zero.";
+                    return 3;
+                fi;
+            else
+                JrnlMsg "Return status does not match expected return status.";
+                LogFailure $2 $1;
+                return 2;
+            fi;
+        else
+            JrnlMsg "Results file does not match expected results file.";
+            return 1;
+        fi;
+    fi
+}
+CloseTP () 
+{ 
+    $CAL_TRACE;
+    __inspectmsg=;
+    exit
+}
+CreateFileName () 
+{ 
+    $CAL_TRACE;
+    if [ $# -eq 0 ]; then
+        _FileName="";
+    fi;
+    if [ $# -eq 4 ]; then
+        _FileName=$1_$2_$3.$4;
+    else
+        _FileName=$1_$2_$3;
+    fi;
+    if [ -z "$SHORT_FILENAMES" ]; then
+        echo $_FileName;
+    else
+        _CompressFileName_ $_FileName;
+    fi
+}
+CreateTextFile () 
+{ 
+    $CAL_TRACE;
+    echo "$3" > $1;
+    chmod $2 $1
+}
+EqualFiles () 
+{ 
+    $CAL_TRACE;
+    if [ ! -r $1 ]; then
+        LogWarning "EqualFiles: Unable to open file" $1 "for comparison";
+        if [ ! -r $2 ]; then
+            LogWarning "EqualFiles: Unable to open file" $2 "for comparison";
+        fi;
+        return 1;
+    else
+        if [ ! -r $2 ]; then
+            LogWarning "EqualFiles: Unable to open file" $2 "for comparison";
+            return 1;
+        else
+            cmp -s $1 $2;
+            return $?;
+        fi;
+    fi
+}
+ExecCmdPriv () 
+{ 
+    $CAL_TRACE;
+    ExecuteCommand "setpriv $5 $6 $1" $2 $3 $4
+}
+ExecuteCommand () 
+{ 
+    $CAL_TRACE;
+    _cmdLine=$1;
+    _stdin=$2;
+    _stdout=$3;
+    _stderr=$4;
+    if [ "$2" = "NULL" ]; then
+        _stdin="/dev/null";
+    fi;
+    if [ "$3" = "NULL" ]; then
+        _stdout="/dev/null";
+    fi;
+    if [ "$4" = "NULL" ]; then
+        _stderr="/dev/null";
+    fi;
+    eval $_cmdLine < $_stdin > $_stdout 2> $_stderr
+}
+FindCommand () 
+{ 
+    $CAL_TRACE;
+    IFS=:;
+    for i in $PATH;
+    do
+        if [ -x $i/$1 ] && [ ! -d $i/$1 ]; then
+            echo $i/$1;
+            return 0;
+        fi;
+    done;
+    echo $1;
+    return 255
+}
+GetConfig () 
+{ 
+    if [ $# -eq 0 ]; then
+        echo "Usage: GetConfig <config-value> [<pathname>]" 1>&2;
+        return $VSC_ERROR;
+    fi;
+    case $1 in 
+        ARG_MAX | CHILD_MAX | CLK_TCK | NGROUPS_MAX | OPEN_MAX | _POSIX_LINK_MAX | _POSIX_MAX_CANON | _POSIX_MAX_INPUT | _POSIX_NAME_MAX | _POSIX_PATH_MAX | _POSIX_PIPE_BUF | _POSIX_ARG_MAX | _POSIX_CHILD_MAX | _POSIX_NGROUPS_MAX | _POSIX_OPEN_MAX | _POSIX_JOB_CONTROL | _POSIX_SAVED_IDS | _POSIX_VERSION)
+            Getconf $1 2>&1;
+            return $?
+        ;;
+        LINK_MAX | MAX_CANON | MAX_INPUT | NAME_MAX | PATH_MAX | PIPE_BUF | _POSIX_CHOWN_RESTRICTED | _POSIX_NO_TRUNC | _POSIX_VDISABLE)
+            if [ $# -eq 1 ]; then
+                echo "GetConfig $1 requires a pathname argument." 1>&2;
+                return $VSC_ERROR;
+            fi;
+            Getconf $1 $2 2>&1;
+            return $?
+        ;;
+        BC_BASE_MAX | BC_DIM_MAX | BC_SCALE_MAX | BC_STRING_MAX | COLL_WEIGHTS_MAX | EXPR_NEST_MAX | LINE_MAX | RE_DUP_MAX | _POSIX2_BC_BASE_MAX | POSIX2_BC_BASE_MAX | _POSIX2_BC_DIM_MAX | POSIX2_BC_DIM_MAX | _POSIX2_BC_SCALE_MAX | POSIX2_BC_SCALE_MAX | _POSIX2_BC_STRING_MAX | POSIX2_BC_STRING_MAX | _POSIX2_COLL_WEIGHTS_MAX | POSIX2_COLL_WEIGHTS_MAX | _POSIX2_EXPR_NEST_MAX | POSIX2_EXPR_NEST_MAX | _POSIX2_LINE_MAX | POSIX2_LINE_MAX | _POSIX2_RE_DUP_MAX | POSIX2_RE_DUP_MAX | _POSIX2_VERSION | POSIX2_VERSION)
+            Getconf $1 2>&1;
+            return $?
+        ;;
+        _POSIX2_C_BIND | POSIX2_C_BIND | _POSIX2_C_DEV | POSIX2_C_DEV | _POSIX2_CHAR_TERM | POSIX2_CHAR_TERM | _POSIX2_FORT_DEV | POSIX2_FORT_DEV | _POSIX2_FORT_RUN | POSIX2_FORT_RUN | _POSIX2_LOCALEDEF | POSIX2_LOCALEDEF | _POSIX2_PBS | _POSIX2_PBS_ACCOUNTING | _POSIX2_PBS_LOCATE | _POSIX2_PBS_MESSAGE | _POSIX2_PBS_TRACK | _POSIX2_SW_DEV | POSIX2_SW_DEV | _POSIX2_UPE | POSIX2_UPE)
+            getconf_result=$(Getconf $1 2>&1);
+            status=$?;
+            if [ "$getconf_result" = -1 ]; then
+                echo undefined;
+            else
+                echo $getconf_result;
+            fi;
+            return $status
+        ;;
+        NZERO | CHARCLASS_NAME_MAX | TMP_MAX | LONG_BIT | WORD_BIT | _XOPEN_VERSION | NL_ARGMAX | NL_LANGMAX | NL_MSGMAX | NL_SETMAX | NL_TEXTMAX | CHAR_BIT | CHAR_MIN | CLK_TCK | SCHAR_MAX | SCHAR_MIN | SHRT_MAX | CS_PATH | SHRT_MIN | SSIZE_MAX | INT_MAX | INT_MIN | UCHAR_MAX | LONG_MAX | UINT_MAX | LONG_MIN | LONG_MAX | ULONG_MAX | USHRT_MAX | MB_LEN_MAX | NL_NMAX | _XOPEN_XCU_VERSION | _XOPEN_XPG2 | _XOPEN_XPG3 | _XOPEN_XPG4)
+            Getconf $1 2>&1;
+            return $?
+        ;;
+        _XOPEN_CRYPT | _XOPEN_ENH_I18N | _XOPEN_SHM)
+            getconf_result=$(Getconf $1 2>&1);
+            status=$?;
+            if [ "$getconf_result" = -1 ]; then
+                echo undefined;
+            else
+                echo $getconf_result;
+            fi;
+            return $status
+        ;;
+        *)
+            __varname=$1;
+            __value=$(eval echo \${$__varname-UnSeTvAr});
+            if test "$__value" = "UnSeTvAr"; then
+                __errmsg="GetConfig: configuration variable $__varname is not defined";
+                if test -z "$tet_thistest"; then
+                    JrnlMsg "$__errmsg";
+                else
+                    SetResult $TET_UNRESOLVED "$__errmsg";
+                fi;
+                echo "GetConfig-error-return-string";
+                return 1;
+            fi;
+            if [ -n "$__value" ]; then
+                echo $__value;
+            else
+                echo undefined;
+            fi;
+            return 0
+        ;;
+    esac
+}
+GetLocale () 
+{ 
+    $CAL_TRACE;
+    _count=`_ArgCount_ $TET_LOCALES`;
+    if [ $_count -eq 0 ]; then
+        _locales="";
+        return 255;
+    else
+        _locales=$TET_LOCALES;
+        return $_count;
+    fi
+}
+Getconf () 
+{ 
+    value=$(getconf $* 2>&1);
+    status=$?;
+    set -- $value;
+    if [ $# -ne 1 ]; then
+        echo undefined;
+    else
+        echo $value;
+    fi;
+    return 0
+}
+InspectOnError () 
+{ 
+    $CAL_TRACE;
+    if [ "$1" = "-off" ]; then
+        __inspectmsg=;
+        return;
+    fi;
+    if [ "$1" = "-interp" ]; then
+        __inspectmsg="VSC ignores this error due to $2. Once this issue is resolved, the required behavior will be tested.";
+        return;
+    fi;
+    __inspectmsg=$*
+}
+JrnlDiff () 
+{ 
+    $CAL_TRACE;
+    if [ ! -r "$1" ]; then
+        LogError "JrnlDiff: unable to open or read file \"$1\".";
+        return 1;
+    else
+        if [ ! -r "$2" ]; then
+            LogError "JrnlDiff: unable to open or read file \"$2\".";
+            return 1;
+        fi;
+    fi;
+    diff -c $1 $2 > _JrnlDiffFile 2>&1;
+    if [ $? -gt 1 ]; then
+        LogError "JrnlDiff: Cannot diff \"$1\" and \"$2\".";
+        JrnlFile _JrnlDiffFile;
+        return 1;
+    fi;
+    _lc=`wc -l < _JrnlDiffFile`;
+    _lc=`echo $_lc`;
+    if [ "$_lc" -gt "$VSC_JRNL_LINES" ]; then
+        JrnlMsg "First $VSC_JRNL_LINES lines of diff of \"$1\" and \"$2\":";
+        _JrnlFile _JrnlDiffFile $VSC_JRNL_LINES;
+    else
+        JrnlMsg "diff of \"$1\" and \"$2\":";
+        _JrnlFile _JrnlDiffFile 0;
+    fi;
+    rm _JrnlDiffFile;
+    return 0
+}
+JrnlFile () 
+{ 
+    $CAL_TRACE;
+    if [ ! -r "$1" ]; then
+        LogError "JrnlFile: unable to open or read file \"$1\".";
+        return 1;
+    fi;
+    _jfile_=$1;
+    tet_infoline "Contents of $_jfile_:";
+    _JrnlFile $_jfile_ $VSC_JRNL_LINES;
+    return 0
+}
+JrnlMsg () 
+{ 
+    $CAL_TRACE;
+    tet_infoline "$*"
+}
+LogError () 
+{ 
+    $CAL_TRACE;
+    JrnlMsg "*ERROR -" $*
+}
+LogFailure () 
+{ 
+    $CAL_TRACE;
+    JrnlMsg "Expected return: ($1), Actual return: ($2)"
+}
+LogWarning () 
+{ 
+    $CAL_TRACE;
+    JrnlMsg "*WARNING -" $*
+}
+OpenTP () 
+{ 
+    $CAL_TRACE;
+    OPENTP=1;
+    JrnlMsg "Assertion #$2 ($3): $4";
+    _testCmd=`FindCommand $1`;
+    echo $_testCmd;
+    if [ -z "$_testCmd" ]; then
+        LogError "$1 not found in search path:";
+        JrnlMsg "$PATH";
+        tet_result $TET_FAIL;
+        tet_setblock;
+        return 1;
+    fi;
+    return 0
+}
+SetResult () 
+{ 
+    $CAL_TRACE;
+    __result=$1;
+    if [ -n "$__inspectmsg" ] && [ "$__result" != $TET_PASS ]; then
+        tet_result $TET_PASS;
+        JrnlMsg "WARNING: $__inspectmsg";
+        if [ ! -z "$2" ]; then
+            JrnlMsg "$2";
+        fi;
+    else
+        tet_result $__result;
+        if [ ! -z "$2" ]; then
+            JrnlMsg "$2";
+        fi;
+    fi
+}
+SetupLocale () 
+{ 
+    $CAL_TRACE;
+    _count=`_ArgCount_ $_locales`;
+    LANG=${_locales%% *};
+    if [ `_ArgCount_ $_locales` -gt 1 ]; then
+        _locales=${_locales#* };
+    else
+        _locales="";
+    fi;
+    return
+}
+TraceMsg () 
+{ 
+    if [ $# -le 1 ]; then
+        JrnlMsg "*WARNING - TraceMsg: called without parameters";
+        return 1;
+    fi;
+    case $TMSG_LEVEL in 
+        TMSG_TERSE | TMSG_SHORT | TMSG_VERBOSE | TMSG_DEBUG)
+
+        ;;
+        *)
+            JrnlMsg "WARNING - TraceMsg: Invalid TMSG_LEVEL \"$TMSG_LEVEL\"";
+            return 2
+        ;;
+    esac;
+    case $1 in 
+        TMSG_TERSE)
+            shift;
+            JrnlMsg $@
+        ;;
+        TMSG_SHORT)
+            case $TMSG_LEVEL in 
+                TMSG_SHORT | TMSG_VERBOSE | TMSG_DEBUG)
+                    shift;
+                    JrnlMsg $@
+                ;;
+                *)
+
+                ;;
+            esac
+        ;;
+        TMSG_VERBOSE)
+            case $TMSG_LEVEL in 
+                TMSG_VERBOSE | TMSG_DEBUG)
+                    shift;
+                    JrnlMsg $@
+                ;;
+                *)
+
+                ;;
+            esac
+        ;;
+        TMSG_DEBUG)
+            case $TMSG_LEVEL in 
+                TMSG_DEBUG)
+                    shift;
+                    JrnlMsg $@
+                ;;
+                *)
+
+                ;;
+            esac
+        ;;
+        *)
+            echo "Error: Invalid level \"$1\" given." 1>&2;
+            return 2
+        ;;
+    esac;
+    return 0
+}
+_ArgCount_ () 
+{ 
+    $CAL_TRACE;
+    echo $#
+}
+_CompressFileName_ () 
+{ 
+    $CAL_TRACE;
+    echo $1
+}
+_JrnlFile () 
+{ 
+    $CAL_TRACE;
+    SaveIFS="$IFS";
+    _jfile_=$1;
+    _lim=$2;
+    if [ "X$_lim" = "X" ] || [ $_lim -eq 0 ] || [ -z "$_lim" ]; then
+        _lim=9999999;
+    fi;
+    IFS="";
+    _jrnl_ct=0;
+    while read -r _jrnl_line_; do
+        tet_infoline "$_jrnl_line_";
+        _jrnl_ct=$(( $_jrnl_ct + 1));
+        if [ $_jrnl_ct -ge $_lim ]; then
+            tet_infoline "...omitting remaining lines.";
+            break;
+        fi;
+    done < $_jfile_;
+    IFS="$SaveIFS"
+}
+clean_up () 
+{ 
+    if [ "$pash_daemon" -eq 1 ]; then
+        msg="Exit:${process_id}";
+        daemon_response=$(pash_communicate_daemon_just_send "$msg");
+    fi
+}
+final_steps () 
+{ 
+    if [ "$PASH_DEBUG_LEVEL" -ne 0 ] && [ "$pash_avoid_pash_runtime_completion_flag" -ne 1 ]; then
+        pash_output_var_file="$($RUNTIME_DIR/pash_ptempfile_name.sh $distro)";
+        pash_output_set_file="$($RUNTIME_DIR/pash_ptempfile_name.sh $distro)";
+        source "$RUNTIME_DIR/pash_runtime_shell_to_pash.sh" ${pash_output_var_file} ${pash_output_set_file};
+        source "$RUNTIME_DIR/pash_runtime_complete_execution.sh";
+    fi
+}
+pash_communicate_daemon () 
+{ 
+    local message=$1;
+    pash_redir_output echo "Sending msg to daemon: $message";
+    daemon_response=$(echo "$message" | nc -U "$DAEMON_SOCKET");
+    pash_redir_output echo "Got response from daemon: $daemon_response";
+    echo "$daemon_response"
+}
+declare -fx pash_communicate_daemon
+pash_communicate_daemon_just_send () 
+{ 
+    pash_communicate_daemon $1
+}
+declare -fx pash_communicate_daemon_just_send
+pash_redir_all_output () 
+{ 
+    :
+}
+declare -fx pash_redir_all_output
+pash_redir_all_output_always_execute () 
+{ 
+    $@ > /dev/null 2>&1
+}
+declare -fx pash_redir_all_output_always_execute
+pash_redir_output () 
+{ 
+    :
+}
+declare -fx pash_redir_output
+pash_wait_until_daemon_listening () 
+{ 
+    while ! nc -z -U "$DAEMON_SOCKET" > /dev/null 2>&1; do
+        sleep 0.01;
+    done
+}
+declare -fx pash_wait_until_daemon_listening
+run_parallel () 
+{ 
+    trap clean_up SIGTERM SIGINT EXIT;
+    source "$RUNTIME_DIR/pash_wrap_vars.sh" ${pash_script_to_execute};
+    internal_exec_status=$?;
+    final_steps;
+    clean_up;
+    ( exit $internal_exec_status )
+}
+
+declare -- BASH="/bin/bash"
+declare -r BASHOPTS="cmdhist:complete_fullquote:extquote:force_fignore:hostcomplete:interactive_comments:progcomp:promptvars:sourcepath"
+declare -ir BASHPID
+declare -A BASH_ALIASES=()
+declare -a BASH_ARGC=([0]="1" [1]="1")
+declare -a BASH_ARGV=([0]="/tmp/pash_BAAI6kR/tmp0g6vhek4" [1]="1-1000")
+declare -A BASH_CMDS=()
+declare -- BASH_COMMAND
+declare -- BASH_EXECUTION_STRING="source /tmp/pash_BAAI6kR/tmp0g6vhek4"
+declare -a BASH_LINENO=([0]="86" [1]="3971" [2]="0")
+declare -a BASH_SOURCE=([0]="/pash/pash/compiler/pash_declare_vars.sh" [1]="/pash/pash/compiler/pash_runtime.sh" [2]="/tmp/pash_BAAI6kR/tmp0g6vhek4")
+declare -- BASH_SUBSHELL
+declare -ar BASH_VERSINFO=([0]="4" [1]="4" [2]="20" [3]="1" [4]="release" [5]="x86_64-pc-linux-gnu")
+declare -- BASH_VERSION="4.4.20(1)-release"
+declare -- COMP_WORDBREAKS
+declare -x DAEMON_SOCKET="/tmp/pash_BAAI6kR//daemon_socket"
+declare -x DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1006/bus"
+declare -a DIRSTACK=()
+declare -ir EUID="1006"
+declare -x EXP_EXEC_LIBRARY="/pash/posix/tet3.8/vsc/Src/ImplSpec"
+declare -x EXP_LIBRARY="/pash/posix/tet3.8/vsc/Lib"
+declare -a FUNCNAME
+declare -a GROUPS=()
+declare -i HISTCMD
+declare -x HOME="/home/mgree"
+declare -- HOSTNAME="antikythera"
+declare -- HOSTTYPE="x86_64"
+declare -- IFS=" 	
+"
+declare -x IGNORE_ERROUT="8"
+declare -x IGNORE_OUTPUT="4"
+declare -x IGNORE_STATUS="2"
+declare -x LANG="POSIX"
+declare -x LC_ALL="POSIX"
+declare -x LD_LIBRARY_PATH=":/usr/local/lib/"
+declare -x LESSCLOSE="/usr/bin/lesspipe %s %s"
+declare -x LESSOPEN="| /usr/bin/lesspipe %s"
+declare -x LIBVIRT_DEFAULT_URI="qemu:///system"
+declare -i LINENO
+declare -x LOGNAME="mgree"
+declare -x LS_COLORS="rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:"
+declare -- MACHTYPE="x86_64-pc-linux-gnu"
+declare -x MACROLIB="/pash/posix/tet3.8/vsc/Src/GA/CtgenMacros"
+declare -x MAIL="/var/mail/mgree"
+declare -x NEGATIVE_TEST="1"
+declare -- NEG_CHK="1"
+declare -x NULL="NULL"
+declare -x OLDPWD="/pash/pash"
+declare -- OPTERR="1"
+declare -i OPTIND="1"
+declare -- OSTYPE="linux-gnu"
+declare -x PASH_DEBUG_LEVEL="0"
+declare -x PASH_FROM_SH="pa.sh"
+declare -x PASH_REDIR="&2"
+declare -x PASH_TMP_PREFIX="/tmp/pash_BAAI6kR/"
+declare -x PASH_TOP="/pash/pash"
+declare -x PATH="/home/mgree/.local/bin:/pash/posix/tet3.8/vsc/Bin:/pash/posix/tet3.8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:."
+declare -a PIPESTATUS=([0]="0")
+declare -- POS_CHK="0"
+declare -ir PPID="6149"
+declare -- PS4="+ "
+declare -x PWD="/pash/posix/tet3.8/vsc/tet_tmp_dir/06120aa/tset/POSIX.shell/shell"
+declare -x PYTHONPATH="/pash/pash/python_pkgs/"
+declare -i RANDOM
+declare -x RUNTIME_DIR="/pash/pash/compiler"
+declare -x RUNTIME_IN_FIFO="/tmp/pash_BAAI6kR//runtime_in_fifo"
+declare -x RUNTIME_LIBRARY_DIR="/pash/pash/compiler/../runtime/"
+declare -x RUNTIME_OUT_FIFO="/tmp/pash_BAAI6kR//runtime_out_fifo"
+declare -- SECONDS
+declare -x SHELL="/bin/bash"
+declare -r SHELLOPTS="braceexpand:hashall:interactive-comments"
+declare -x SHLVL="4"
+declare -x SSH_CLIENT="68.192.246.166 50980 22"
+declare -x SSH_CONNECTION="68.192.246.166 50980 128.30.64.121 22"
+declare -x SSH_TTY="/dev/pts/0"
+declare -x STY="17308.posix"
+declare -x TCL_LIBRARY="/pash/posix/tet3.8/vsc/Src/Interact/tcl/library"
+declare -x TERM="screen"
+declare -x TERMCAP="SC|screen|VT 100/ANSI X3.64 virtual terminal:\\
+	:DO=\\E[%dB:LE=\\E[%dD:RI=\\E[%dC:UP=\\E[%dA:bs:bt=\\E[Z:\\
+	:cd=\\E[J:ce=\\E[K:cl=\\E[H\\E[J:cm=\\E[%i%d;%dH:ct=\\E[3g:\\
+	:do=^J:nd=\\E[C:pt:rc=\\E8:rs=\\Ec:sc=\\E7:st=\\EH:up=\\EM:\\
+	:le=^H:bl=^G:cr=^M:it#8:ho=\\E[H:nw=\\EE:ta=^I:is=\\E)0:\\
+	:li#24:co#80:am:xn:xv:LP:sr=\\EM:al=\\E[L:AL=\\E[%dL:\\
+	:cs=\\E[%i%d;%dr:dl=\\E[M:DL=\\E[%dM:dc=\\E[P:DC=\\E[%dP:\\
+	:im=\\E[4h:ei=\\E[4l:mi:IC=\\E[%d@:ks=\\E[?1h\\E=:\\
+	:ke=\\E[?1l\\E>:vi=\\E[?25l:ve=\\E[34h\\E[?25h:vs=\\E[34l:\\
+	:ti=\\E[?1049h:te=\\E[?1049l:Km=\\E[M:k0=\\E[10~:k1=\\EOP:\\
+	:k2=\\EOQ:k3=\\EOR:k4=\\EOS:k5=\\E[15~:k6=\\E[17~:k7=\\E[18~:\\
+	:k8=\\E[19~:k9=\\E[20~:k;=\\E[21~:F1=\\E[23~:F2=\\E[24~:\\
+	:kh=\\E[1~:@1=\\E[1~:kH=\\E[4~:@7=\\E[4~:kN=\\E[6~:kP=\\E[5~:\\
+	:kI=\\E[2~:kD=\\E[3~:ku=\\EOA:kd=\\EOB:kr=\\EOC:kl=\\EOD:"
+declare -x TERMIN_EXP="/pash/posix/tet3.8/vsc/Lib/termin.exp"
+declare -x TET_ACTIVITY="0"
+declare -x TET_CODE="/var/tmp/tccAAA6120"
+declare -x TET_CONFIG="/var/tmp/tccAAB6120"
+declare -x TET_EXECUTE=""
+declare -x TET_FAIL="FAIL"
+declare -x TET_FATAL="FATAL"
+declare -x TET_INSPECT="INSPECT"
+declare -x TET_NORESULT="NORESULT"
+declare -x TET_NOTINUSE="NOTINUSE"
+declare -x TET_NOT_IMPLEMENTED="NOT_IMPLEMENTED"
+declare -x TET_PASS="PASS"
+declare -x TET_ROOT="/pash/posix/tet3.8"
+declare -x TET_RUN=""
+declare -x TET_SUITE_ROOT="/pash/posix/tet3.8"
+declare -x TET_TIARGS=""
+declare -x TET_UNAPPROVED_ASSERTION="UNAPPROVED_ASSERTION"
+declare -x TET_UNINITIATED="UNINITIATED"
+declare -x TET_UNRESOLVED="UNRESOLVED"
+declare -x TET_UNSUPPORTED="UNSUPPORTED"
+declare -x TET_UNTESTED="UNTESTED"
+declare -x TS_BIN="/pash/posix/tet3.8/vsc/Bin"
+declare -x TS_GAINC="/pash/posix/tet3.8/vsc/Inc/GA"
+declare -x TS_INC="/pash/posix/tet3.8/vsc/Inc"
+declare -x TS_LIB="/pash/posix/tet3.8/vsc/Lib"
+declare -x TS_LIBTK="/pash/posix/tet3.8/vsc/Shlib"
+declare -x TS_ROOT="/pash/posix/tet3.8/vsc"
+declare -x TS_SHLIB="/pash/posix/tet3.8/vsc/Shlib"
+declare -ir UID="1006"
+declare -x USER="mgree"
+declare -- VSC_COMMAND_UNDER_TEST="sh_09"
+declare -x VSC_ERROR="2"
+declare -x VSC_FAILURE="1"
+declare -- VSC_JRNL_LINES="100"
+declare -x VSC_PASS
+declare -x VSC_ROOT="/pash/posix/tet3.8/vsc"
+declare -- VSC_SUCCESS="0"
+declare -- VSC_VARS_H="True"
+declare -x WINDOW="0"
+declare -x XDG_DATA_DIRS="/usr/local/share:/usr/share:/var/lib/snapd/desktop"
+declare -x XDG_RUNTIME_DIR="/run/user/1006"
+declare -x XDG_SESSION_ID="29"
+declare -- _="Writing vars to: /tmp/pash_BAAI6kR//pash_E9ZTk90LGE"
+declare -- _JrnlLen_="350"
+declare -- daemon_response=""
+declare -x distro="ubuntu"
+declare -- from_set="huBc"
+declare -- ic506="tp506"
+declare -- ic507="tp507"
+declare -- ic508="tp508"
+declare -- ic509="tp509"
+declare -- ic510="tp510"
+declare -- ic511="tp511"
+declare -- ic512="tp512"
+declare -- ic513="tp513"
+declare -- ic514="tp514"
+declare -- ic515="tp515"
+declare -- ic516="tp516"
+declare -- ic517="tp517"
+declare -- ic518="tp518"
+declare -- ic519="tp519"
+declare -- ic520="tp520"
+declare -- ic521="tp521"
+declare -- ic522="tp522"
+declare -- ic523="tp523"
+declare -- ic524="tp524"
+declare -- ic525="tp525"
+declare -- ic526="tp526"
+declare -- ic527="tp527"
+declare -- ic528="tp528"
+declare -- ic529="tp529"
+declare -- ic530="tp530"
+declare -- ic531="tp531"
+declare -- ic532="tp532"
+declare -- ic533="tp533"
+declare -- ic534="tp534"
+declare -- ic535="tp535"
+declare -- ic536="tp536"
+declare -- ic537="tp537"
+declare -- ic538="tp538"
+declare -- ic539="tp539"
+declare -- ic540="tp540"
+declare -- ic541="tp541"
+declare -- ic542="tp542"
+declare -- ic543="tp543"
+declare -- ic544="tp544"
+declare -- ic545="tp545"
+declare -- ic546="tp546"
+declare -- ic547="tp547"
+declare -- ic548="tp548"
+declare -- ic549="tp549"
+declare -- ic550="tp550"
+declare -- ic569="tp569"
+declare -- ic570="tp570"
+declare -- ic571="tp571"
+declare -- ic575="tp575"
+declare -- ic576="tp576"
+declare -- ic577="tp577"
+declare -- ic578="tp578"
+declare -- ic579="tp579"
+declare -- ic580="tp580"
+declare -- ic581="tp581"
+declare -- ic582="tp582"
+declare -- iclist="ic506 ic507 ic508 ic509 ic510 ic511 ic512 ic513 ic514 ic515 ic516 ic517 ic518 ic519 ic520 ic521 ic522 ic523 ic524 ic525 ic526 ic527 ic528 ic529 ic530 ic531 ic532 ic533 ic534 ic535 ic536 ic537 ic538 ic539 ic540 ic541 ic542 ic543 ic544 ic545 ic546 ic547 ic548 ic549 ic550 ic569 ic570 ic571 ic575 ic576 ic577 ic578 ic579 ic580 ic581 ic582"
+declare -- internal_exec_status="0"
+declare -- msg="Exit:3"
+declare -x pash_assert_compiler_success_flag="0"
+declare -x pash_avoid_pash_runtime_completion_flag="0"
+declare -x pash_checking_debug_level="0"
+declare -x pash_checking_log_file="0"
+declare -x pash_checking_speculation="0"
+declare -- pash_compiled_script_file="/tmp/pash_BAAI6kR//pash_pEfcv75rTH"
+declare -x pash_current_set_state="huBc"
+declare -x pash_daemon="1"
+declare -x pash_daemon_communicates_through_unix_pipes_flag="0"
+declare -- pash_default_set_state="huB"
+declare -- pash_disable_parallel_pipelines="1"
+declare -x pash_dry_run_compiler_flag="0"
+declare -- pash_exec_time_start="1637621732554259334"
+declare -x pash_execute_flag="1"
+declare -x pash_input_args="1-1000"
+declare -- pash_input_ir_file="/tmp/pash_BAAI6kR/tmp5c52rw0u"
+declare -x pash_output_time_flag="1"
+declare -x pash_parallel_pipelines="1"
+declare -x pash_previous_exit_status="0"
+declare -x pash_previous_set_status="hBc"
+declare -- pash_runtime_final_status="0"
+declare -- pash_runtime_return_code="1"
+declare -- pash_runtime_shell_variables_file="/tmp/pash_BAAI6kR//pash_E9ZTk90LGE"
+declare -- pash_script_to_execute="/tmp/pash_BAAI6kR/tmp_6n19dpo"
+declare -- pash_sequential_script_file="/tmp/pash_BAAI6kR/tmp_6n19dpo"
+declare -- pash_set_to_add=""
+declare -- pash_set_to_remove="u"
+declare -x pash_shell_name="sh_09.ex"
+declare -x pash_speculation_flag="0"
+declare -- process_id="3"
+declare -a response_args=([0]="ERROR:" [1]="3" [2]="failed" [3]="to" [4]="compile")
+declare -- script_source="/tmp/pash_BAAI6kR/tmp_6n19dpo"
+declare -- tet_cleanup=""
+declare -- tet_startup="sh_09_startup"
+declare -- to_set="hBc"
+declare -- traps_set=""
+declare -- vars_file="/tmp/pash_BAAI6kR//pash_E9ZTk90LGE"
+CheckPosixVersion () 
+{ 
+    cpv_min=${1:?};
+    cpv_max=${2:?};
+    if PosixVersionOK; then
+        : ok;
+    else
+        return 1;
+    fi;
+    if { 
+        test $cpv_min -eq -1 || test $posix_version -ge $cpv_min
+    } && { 
+        test $cpv_max -eq -1 || test $posix_version -le $cpv_max
+    }; then
+        return 0;
+    else
+        SetResult $TET_NOTINUSE "No test when VSC_POSIX_VERSION = $posix_version";
+        return 1;
+    fi
+}
+CheckResults () 
+{ 
+    $CAL_TRACE;
+    if [ `expr $6 / $NEGATIVE_TEST % 2` -eq 1 ]; then
+        if [ `expr $6 / $IGNORE_STATUS % 2` -eq 1 ] || [ $1 -ne 0 ]; then
+            if [ `expr $6 / $IGNORE_ERROUT % 2` -eq 1 ] || [ -s $4 ]; then
+                if [ `expr $6 / $IGNORE_OUTPUT % 2` -eq 1 ] || [ -f $3 ] && [ ! -s $3 ]; then
+                    return 0;
+                else
+                    JrnlMsg "Results file size is non-zero and expected zero.";
+                    return 3;
+                fi;
+            else
+                JrnlMsg "Error file size is zero and expected non-zero.";
+                return 2;
+            fi;
+        else
+            JrnlMsg "Return status is zero and expected non-zero.";
+            return 1;
+        fi;
+    else
+        if [ `expr $6 / $IGNORE_OUTPUT % 2` -eq 1 ] || EqualFiles $3 $4; then
+            if [ `expr $6 / $IGNORE_STATUS % 2` -eq 1 ] || [ $1 -eq $2 ]; then
+                if [ `expr $6 / $IGNORE_ERROUT % 2` -eq 1 ] || [ -f $5 ] && [ ! -s $5 ]; then
+                    return 0;
+                else
+                    JrnlMsg "Error file size is non-zero and expected zero.";
+                    return 3;
+                fi;
+            else
+                JrnlMsg "Return status does not match expected return status.";
+                LogFailure $2 $1;
+                return 2;
+            fi;
+        else
+            JrnlMsg "Results file does not match expected results file.";
+            return 1;
+        fi;
+    fi
+}
+CheckTestVersions () 
+{ 
+    ctv_posix_min=${1:?};
+    ctv_posix_max=${2:?};
+    ctv_xopen_min=${3:?};
+    ctv_xopen_max=${4:?};
+    if PosixVersionOK && XopenVersionOK; then
+        : ok;
+    else
+        return 1;
+    fi;
+    if test $xopen_version -eq 0; then
+        if { 
+            test $ctv_posix_min -eq -1 || test $posix_version -ge $ctv_posix_min
+        } && { 
+            test $ctv_posix_max -eq -1 || test $posix_version -le $ctv_posix_max
+        }; then
+            return 0;
+        fi;
+    else
+        if { 
+            test $ctv_xopen_min -eq -1 || test $xopen_version -ge $ctv_xopen_min
+        } && { 
+            test $ctv_xopen_max -eq -1 || test $xopen_version -le $ctv_xopen_max
+        }; then
+            return 0;
+        fi;
+    fi;
+    SetResult $TET_NOTINUSE "No test when VSC_POSIX_VERSION = $posix_version and VSC_XOPEN_VERSION = $xopen_version";
+    return 1
+}
+CheckXopenVersion () 
+{ 
+    cpv_min=${1:?};
+    cpv_max=${2:?};
+    if XopenVersionOK; then
+        : ok;
+    else
+        return 1;
+    fi;
+    if { 
+        test $cpv_min -eq -1 || test $xopen_version -ge $cpv_min
+    } && { 
+        test $cpv_max -eq -1 || test $xopen_version -le $cpv_max
+    }; then
+        return 0;
+    else
+        SetResult $TET_NOTINUSE "No test when VSC_XOPEN_VERSION = $xopen_version";
+        return 1;
+    fi
+}
+CloseTP () 
+{ 
+    $CAL_TRACE;
+    __inspectmsg=;
+    exit
+}
+CreateFileName () 
+{ 
+    $CAL_TRACE;
+    if [ $# -eq 0 ]; then
+        _FileName="";
+    fi;
+    if [ $# -eq 4 ]; then
+        _FileName=$1_$2_$3.$4;
+    else
+        _FileName=$1_$2_$3;
+    fi;
+    if [ -z "$SHORT_FILENAMES" ]; then
+        echo $_FileName;
+    else
+        _CompressFileName_ $_FileName;
+    fi
+}
+CreateTextFile () 
+{ 
+    $CAL_TRACE;
+    echo "$3" > $1;
+    chmod $2 $1
+}
+DeleteAllTPs () 
+{ 
+    : "${1:?}";
+    for dat_ic in $iclist;
+    do
+        for dat_tp in `eval echo \\$$dat_ic`;
+        do
+            tet_delete $dat_tp "$*";
+        done;
+    done
+}
+DeleteTPRange () 
+{ 
+    dtr_tpmin=${1:?};
+    dtr_tpmax=${2:?};
+    shift 2;
+    : "${1:?}";
+    dtr_tpnum=$((dtr_tpmin - 1));
+    while test $((dtr_tpnum += 1)) -le $dtr_tpmax; do
+        tet_delete tp$dtr_tpnum "$*";
+    done
+}
+EqualFiles () 
+{ 
+    $CAL_TRACE;
+    if [ ! -r $1 ]; then
+        LogWarning "EqualFiles: Unable to open file" $1 "for comparison";
+        if [ ! -r $2 ]; then
+            LogWarning "EqualFiles: Unable to open file" $2 "for comparison";
+        fi;
+        return 1;
+    else
+        if [ ! -r $2 ]; then
+            LogWarning "EqualFiles: Unable to open file" $2 "for comparison";
+            return 1;
+        else
+            cmp -s $1 $2;
+            return $?;
+        fi;
+    fi
+}
+ExecCmdPriv () 
+{ 
+    $CAL_TRACE;
+    ExecuteCommand "setpriv $5 $6 $1" $2 $3 $4
+}
+ExecuteCommand () 
+{ 
+    $CAL_TRACE;
+    _cmdLine=$1;
+    _stdin=$2;
+    _stdout=$3;
+    _stderr=$4;
+    if [ "$2" = "NULL" ]; then
+        _stdin="/dev/null";
+    fi;
+    if [ "$3" = "NULL" ]; then
+        _stdout="/dev/null";
+    fi;
+    if [ "$4" = "NULL" ]; then
+        _stderr="/dev/null";
+    fi;
+    eval $_cmdLine < $_stdin > $_stdout 2> $_stderr
+}
+FindCommand () 
+{ 
+    $CAL_TRACE;
+    IFS=:;
+    for i in $PATH;
+    do
+        if [ -x $i/$1 ] && [ ! -d $i/$1 ]; then
+            echo $i/$1;
+            return 0;
+        fi;
+    done;
+    echo $1;
+    return 255
+}
+GetConfig () 
+{ 
+    if [ $# -eq 0 ]; then
+        echo "Usage: GetConfig <config-value> [<pathname>]" 1>&2;
+        return $VSC_ERROR;
+    fi;
+    case $1 in 
+        ARG_MAX | CHILD_MAX | CLK_TCK | NGROUPS_MAX | OPEN_MAX | _POSIX_LINK_MAX | _POSIX_MAX_CANON | _POSIX_MAX_INPUT | _POSIX_NAME_MAX | _POSIX_PATH_MAX | _POSIX_PIPE_BUF | _POSIX_ARG_MAX | _POSIX_CHILD_MAX | _POSIX_NGROUPS_MAX | _POSIX_OPEN_MAX | _POSIX_JOB_CONTROL | _POSIX_SAVED_IDS | _POSIX_VERSION)
+            Getconf $1 2>&1;
+            return $?
+        ;;
+        LINK_MAX | MAX_CANON | MAX_INPUT | NAME_MAX | PATH_MAX | PIPE_BUF | _POSIX_CHOWN_RESTRICTED | _POSIX_NO_TRUNC | _POSIX_VDISABLE)
+            if [ $# -eq 1 ]; then
+                echo "GetConfig $1 requires a pathname argument." 1>&2;
+                return $VSC_ERROR;
+            fi;
+            Getconf $1 $2 2>&1;
+            return $?
+        ;;
+        BC_BASE_MAX | BC_DIM_MAX | BC_SCALE_MAX | BC_STRING_MAX | COLL_WEIGHTS_MAX | EXPR_NEST_MAX | LINE_MAX | RE_DUP_MAX | _POSIX2_BC_BASE_MAX | POSIX2_BC_BASE_MAX | _POSIX2_BC_DIM_MAX | POSIX2_BC_DIM_MAX | _POSIX2_BC_SCALE_MAX | POSIX2_BC_SCALE_MAX | _POSIX2_BC_STRING_MAX | POSIX2_BC_STRING_MAX | _POSIX2_COLL_WEIGHTS_MAX | POSIX2_COLL_WEIGHTS_MAX | _POSIX2_EXPR_NEST_MAX | POSIX2_EXPR_NEST_MAX | _POSIX2_LINE_MAX | POSIX2_LINE_MAX | _POSIX2_RE_DUP_MAX | POSIX2_RE_DUP_MAX | _POSIX2_VERSION | POSIX2_VERSION)
+            Getconf $1 2>&1;
+            return $?
+        ;;
+        _POSIX2_C_BIND | POSIX2_C_BIND | _POSIX2_C_DEV | POSIX2_C_DEV | _POSIX2_CHAR_TERM | POSIX2_CHAR_TERM | _POSIX2_FORT_DEV | POSIX2_FORT_DEV | _POSIX2_FORT_RUN | POSIX2_FORT_RUN | _POSIX2_LOCALEDEF | POSIX2_LOCALEDEF | _POSIX2_PBS | _POSIX2_PBS_ACCOUNTING | _POSIX2_PBS_LOCATE | _POSIX2_PBS_MESSAGE | _POSIX2_PBS_TRACK | _POSIX2_SW_DEV | POSIX2_SW_DEV | _POSIX2_UPE | POSIX2_UPE)
+            getconf_result=$(Getconf $1 2>&1);
+            status=$?;
+            if [ "$getconf_result" = -1 ]; then
+                echo undefined;
+            else
+                echo $getconf_result;
+            fi;
+            return $status
+        ;;
+        NZERO | CHARCLASS_NAME_MAX | TMP_MAX | LONG_BIT | WORD_BIT | _XOPEN_VERSION | NL_ARGMAX | NL_LANGMAX | NL_MSGMAX | NL_SETMAX | NL_TEXTMAX | CHAR_BIT | CHAR_MIN | CLK_TCK | SCHAR_MAX | SCHAR_MIN | SHRT_MAX | CS_PATH | SHRT_MIN | SSIZE_MAX | INT_MAX | INT_MIN | UCHAR_MAX | LONG_MAX | UINT_MAX | LONG_MIN | LONG_MAX | ULONG_MAX | USHRT_MAX | MB_LEN_MAX | NL_NMAX | _XOPEN_XCU_VERSION | _XOPEN_XPG2 | _XOPEN_XPG3 | _XOPEN_XPG4)
+            Getconf $1 2>&1;
+            return $?
+        ;;
+        _XOPEN_CRYPT | _XOPEN_ENH_I18N | _XOPEN_SHM)
+            getconf_result=$(Getconf $1 2>&1);
+            status=$?;
+            if [ "$getconf_result" = -1 ]; then
+                echo undefined;
+            else
+                echo $getconf_result;
+            fi;
+            return $status
+        ;;
+        *)
+            __varname=$1;
+            __value=$(eval echo \${$__varname-UnSeTvAr});
+            if test "$__value" = "UnSeTvAr"; then
+                __errmsg="GetConfig: configuration variable $__varname is not defined";
+                if test -z "$tet_thistest"; then
+                    JrnlMsg "$__errmsg";
+                else
+                    SetResult $TET_UNRESOLVED "$__errmsg";
+                fi;
+                echo "GetConfig-error-return-string";
+                return 1;
+            fi;
+            if [ -n "$__value" ]; then
+                echo $__value;
+            else
+                echo undefined;
+            fi;
+            return 0
+        ;;
+    esac
+}
+GetLocale () 
+{ 
+    $CAL_TRACE;
+    _count=`_ArgCount_ $TET_LOCALES`;
+    if [ $_count -eq 0 ]; then
+        _locales="";
+        return 255;
+    else
+        _locales=$TET_LOCALES;
+        return $_count;
+    fi
+}
+Getconf () 
+{ 
+    value=$(getconf $* 2>&1);
+    status=$?;
+    set -- $value;
+    if [ $# -ne 1 ]; then
+        echo undefined;
+    else
+        echo $value;
+    fi;
+    return 0
+}
+InspectOnError () 
+{ 
+    $CAL_TRACE;
+    if [ "$1" = "-off" ]; then
+        __inspectmsg=;
+        return;
+    fi;
+    if [ "$1" = "-interp" ]; then
+        __inspectmsg="VSC ignores this error due to $2. Once this issue is resolved, the required behavior will be tested.";
+        return;
+    fi;
+    __inspectmsg=$*
+}
+IsAllNumeric () 
+{ 
+    case "${1?}" in 
+        "" | *[!0-9]*)
+            return 1
+        ;;
+    esac;
+    return 0
+}
+JrnlDiff () 
+{ 
+    $CAL_TRACE;
+    if [ ! -r "$1" ]; then
+        LogError "JrnlDiff: unable to open or read file \"$1\".";
+        return 1;
+    else
+        if [ ! -r "$2" ]; then
+            LogError "JrnlDiff: unable to open or read file \"$2\".";
+            return 1;
+        fi;
+    fi;
+    diff -c $1 $2 > _JrnlDiffFile 2>&1;
+    if [ $? -gt 1 ]; then
+        LogError "JrnlDiff: Cannot diff \"$1\" and \"$2\".";
+        JrnlFile _JrnlDiffFile;
+        return 1;
+    fi;
+    _lc=`wc -l < _JrnlDiffFile`;
+    _lc=`echo $_lc`;
+    if [ "$_lc" -gt "$VSC_JRNL_LINES" ]; then
+        JrnlMsg "First $VSC_JRNL_LINES lines of diff of \"$1\" and \"$2\":";
+        _JrnlFile _JrnlDiffFile $VSC_JRNL_LINES;
+    else
+        JrnlMsg "diff of \"$1\" and \"$2\":";
+        _JrnlFile _JrnlDiffFile 0;
+    fi;
+    rm _JrnlDiffFile;
+    return 0
+}
+JrnlFile () 
+{ 
+    $CAL_TRACE;
+    if [ ! -r "$1" ]; then
+        LogError "JrnlFile: unable to open or read file \"$1\".";
+        return 1;
+    fi;
+    _jfile_=$1;
+    tet_infoline "Contents of $_jfile_:";
+    _JrnlFile $_jfile_ $VSC_JRNL_LINES;
+    return 0
+}
+JrnlMsg () 
+{ 
+    $CAL_TRACE;
+    tet_infoline "$*"
+}
+LogError () 
+{ 
+    $CAL_TRACE;
+    JrnlMsg "*ERROR -" $*
+}
+LogFailure () 
+{ 
+    $CAL_TRACE;
+    JrnlMsg "Expected return: ($1), Actual return: ($2)"
+}
+LogWarning () 
+{ 
+    $CAL_TRACE;
+    JrnlMsg "*WARNING -" $*
+}
+OpenTP () 
+{ 
+    $CAL_TRACE;
+    OPENTP=1;
+    JrnlMsg "Assertion #$2 ($3): $4";
+    _testCmd=`FindCommand $1`;
+    echo $_testCmd;
+    if [ -z "$_testCmd" ]; then
+        LogError "$1 not found in search path:";
+        JrnlMsg "$PATH";
+        tet_result $TET_FAIL;
+        tet_setblock;
+        return 1;
+    fi;
+    return 0
+}
+PosixVersionOK () 
+{ 
+    if IsAllNumeric "$posix_version"; then
+        return 0;
+    else
+        SetResult $TET_UNRESOLVED "internal error: bad posix_version = $posix_version";
+        return 1;
+    fi
+}
+SetPosixVersion () 
+{ 
+    tet_setblock;
+    posix_version="`GetConfig VSC_POSIX_VERSION`";
+    spv_rc=$?;
+    tet_setblock;
+    if test $spv_rc -ne 0 || test -z "$posix_version" || test "$posix_version" = undefined; then
+        JrnlMsg "configuration variable VSC_POSIX_VERSION is not set";
+        return 1;
+    else
+        if IsAllNumeric "$posix_version"; then
+            return 0;
+        else
+            JrnlMsg "configuration variable VSC_POSIX_VERSION is not numeric";
+            return 1;
+        fi;
+    fi
+}
+SetResult () 
+{ 
+    $CAL_TRACE;
+    __result=$1;
+    if [ -n "$__inspectmsg" ] && [ "$__result" != $TET_PASS ]; then
+        tet_result $TET_PASS;
+        JrnlMsg "WARNING: $__inspectmsg";
+        if [ ! -z "$2" ]; then
+            JrnlMsg "$2";
+        fi;
+    else
+        tet_result $__result;
+        if [ ! -z "$2" ]; then
+            JrnlMsg "$2";
+        fi;
+    fi
+}
+SetTestVersions () 
+{ 
+    stv_rc=0;
+    SetPosixVersion || stv_rc=1;
+    SetXopenVersion || stv_rc=1;
+    return $stv_rc
+}
+SetXopenVersion () 
+{ 
+    tet_setblock;
+    xopen_version="`GetConfig VSC_XOPEN_VERSION`";
+    sxv_rc=$?;
+    tet_setblock;
+    if test $sxv_rc -ne 0 || test -z "$xopen_version" || test "$xopen_version" = undefined; then
+        JrnlMsg "configuration variable VSC_XOPEN_VERSION is not set";
+        return 1;
+    else
+        if IsAllNumeric "$xopen_version"; then
+            return 0;
+        else
+            JrnlMsg "configuration variable VSC_XOPEN_VERSION is not numeric";
+            return 1;
+        fi;
+    fi
+}
+SetupLocale () 
+{ 
+    $CAL_TRACE;
+    _count=`_ArgCount_ $_locales`;
+    LANG=${_locales%% *};
+    if [ `_ArgCount_ $_locales` -gt 1 ]; then
+        _locales=${_locales#* };
+    else
+        _locales="";
+    fi;
+    return
+}
+TraceMsg () 
+{ 
+    if [ $# -le 1 ]; then
+        JrnlMsg "*WARNING - TraceMsg: called without parameters";
+        return 1;
+    fi;
+    case $TMSG_LEVEL in 
+        TMSG_TERSE | TMSG_SHORT | TMSG_VERBOSE | TMSG_DEBUG)
+
+        ;;
+        *)
+            JrnlMsg "WARNING - TraceMsg: Invalid TMSG_LEVEL \"$TMSG_LEVEL\"";
+            return 2
+        ;;
+    esac;
+    case $1 in 
+        TMSG_TERSE)
+            shift;
+            JrnlMsg $@
+        ;;
+        TMSG_SHORT)
+            case $TMSG_LEVEL in 
+                TMSG_SHORT | TMSG_VERBOSE | TMSG_DEBUG)
+                    shift;
+                    JrnlMsg $@
+                ;;
+                *)
+
+                ;;
+            esac
+        ;;
+        TMSG_VERBOSE)
+            case $TMSG_LEVEL in 
+                TMSG_VERBOSE | TMSG_DEBUG)
+                    shift;
+                    JrnlMsg $@
+                ;;
+                *)
+
+                ;;
+            esac
+        ;;
+        TMSG_DEBUG)
+            case $TMSG_LEVEL in 
+                TMSG_DEBUG)
+                    shift;
+                    JrnlMsg $@
+                ;;
+                *)
+
+                ;;
+            esac
+        ;;
+        *)
+            echo "Error: Invalid level \"$1\" given." 1>&2;
+            return 2
+        ;;
+    esac;
+    return 0
+}
+XopenVersionOK () 
+{ 
+    if IsAllNumeric "$xopen_version"; then
+        return 0;
+    else
+        SetResult $TET_UNRESOLVED "internal error: bad xopen_version = $xopen_version";
+        return 1;
+    fi
+}
+_ArgCount_ () 
+{ 
+    $CAL_TRACE;
+    echo $#
+}
+_CompressFileName_ () 
+{ 
+    $CAL_TRACE;
+    echo $1
+}
+_JrnlFile () 
+{ 
+    $CAL_TRACE;
+    SaveIFS="$IFS";
+    _jfile_=$1;
+    _lim=$2;
+    if [ "X$_lim" = "X" ] || [ $_lim -eq 0 ] || [ -z "$_lim" ]; then
+        _lim=9999999;
+    fi;
+    IFS="";
+    _jrnl_ct=0;
+    while read -r _jrnl_line_; do
+        tet_infoline "$_jrnl_line_";
+        _jrnl_ct=$(( $_jrnl_ct + 1));
+        if [ $_jrnl_ct -ge $_lim ]; then
+            tet_infoline "...omitting remaining lines.";
+            break;
+        fi;
+    done < $_jfile_;
+    IFS="$SaveIFS"
+}
+clean_up () 
+{ 
+    if [ "$pash_daemon" -eq 1 ]; then
+        msg="Exit:${process_id}";
+        daemon_response=$(pash_communicate_daemon_just_send "$msg");
+    fi
+}
+final_steps () 
+{ 
+    if [ "$PASH_DEBUG_LEVEL" -ne 0 ] && [ "$pash_avoid_pash_runtime_completion_flag" -ne 1 ]; then
+        pash_output_var_file="$($RUNTIME_DIR/pash_ptempfile_name.sh $distro)";
+        pash_output_set_file="$($RUNTIME_DIR/pash_ptempfile_name.sh $distro)";
+        source "$RUNTIME_DIR/pash_runtime_shell_to_pash.sh" ${pash_output_var_file} ${pash_output_set_file};
+        source "$RUNTIME_DIR/pash_runtime_complete_execution.sh";
+    fi
+}
+pash_communicate_daemon () 
+{ 
+    local message=$1;
+    pash_redir_output echo "Sending msg to daemon: $message";
+    daemon_response=$(echo "$message" | nc -U "$DAEMON_SOCKET");
+    pash_redir_output echo "Got response from daemon: $daemon_response";
+    echo "$daemon_response"
+}
+declare -fx pash_communicate_daemon
+pash_communicate_daemon_just_send () 
+{ 
+    pash_communicate_daemon $1
+}
+declare -fx pash_communicate_daemon_just_send
+pash_redir_all_output () 
+{ 
+    :
+}
+declare -fx pash_redir_all_output
+pash_redir_all_output_always_execute () 
+{ 
+    $@ > /dev/null 2>&1
+}
+declare -fx pash_redir_all_output_always_execute
+pash_redir_output () 
+{ 
+    :
+}
+declare -fx pash_redir_output
+pash_wait_until_daemon_listening () 
+{ 
+    while ! nc -z -U "$DAEMON_SOCKET" > /dev/null 2>&1; do
+        sleep 0.01;
+    done
+}
+declare -fx pash_wait_until_daemon_listening
+run_parallel () 
+{ 
+    trap clean_up SIGTERM SIGINT EXIT;
+    source "$RUNTIME_DIR/pash_wrap_vars.sh" ${pash_script_to_execute};
+    internal_exec_status=$?;
+    final_steps;
+    clean_up;
+    ( exit $internal_exec_status )
+}
+sh_09_startup () 
+{ 
+    if SetTestVersions; then
+        : ok;
+    else
+        for tpnum in 520;
+        do
+            tet_delete tp${tpnum} "a required configuration variable is not set correctly";
+        done;
+    fi
+}
+tp506 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 506 B "A function name is a word comprised of the underscore, alphabetic "`;
+    tet_setblock;
+    TESTID=506;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<EOF
+abcdefghijklm () {
+	echo function 1
+}
+nopqrstuvwxyz  ( )  {
+	echo function 2
+}
+ABCDEFGHIJKLM	(  	) {
+	echo function 3
+}
+NOPQRSTUVWXYZ()
+{
+	echo function 4
+}
+X_0123456789()
+
+(
+	echo function 5
+)
+_(){
+	echo function 6
+}
+abcdefghijklm
+nopqrstuvwxyz
+ABCDEFGHIJKLM
+NOPQRSTUVWXYZ
+X_0123456789
+_
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'expectedOut=test.${TESTID}.exp'";
+        return;
+    fi;
+    cat > $expectedOut  <<EOF
+function 1
+function 2
+function 3
+function 4
+function 5
+function 6
+EOF
+
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+        if [ -s $CT_STDERR ]; then
+            JrnlFile $CT_STDERR;
+        fi;
+    else
+        SetResult $TET_PASS;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp507 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 507 A "Separate namespaces are maintained for functions and variables."`;
+    tet_setblock;
+    TESTID=507;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<EOF
+aname() {
+    echo aname function
+}
+aname=value
+aname
+echo \$aname
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    echo "aname function" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"aname function\"'";
+        return;
+    fi;
+    echo "value" >> $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo >> $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp508 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 508 A "When a function is declared, none of the expansions and redirections are performed."`;
+    tet_setblock;
+    TESTID=508;
+    shellOut=test.${TESTID}.out;
+    rm -f $shellOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'rm -f $shellOut'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<EOF
+var=rightvalue
+myfunction() {
+    var=\$(echo wrongvalue 2> $shellOut)
+    echo \$var
+} > $shellOut
+echo \$var
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    echo "rightvalue" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"rightvalue\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    test ! -f $shellOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: 'test ! -f $shellOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $shellOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp509 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 509 A "When the functionname is specified as the name of a simple command,"`;
+    tet_setblock;
+    TESTID=509;
+    JrnlMsg "Testing brace compound-command with redirection";
+    shellOut=test.${TESTID}.out;
+    : > $shellOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: ': > $shellOut'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<EOF
+var=wrongvalue
+myfunction() {
+    echo \$var
+} >> $shellOut
+var=value
+myfunction 
+myfunction | cat
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    echo "value" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value\"'";
+        return;
+    fi;
+    echo "value" >> $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo >> $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    if [ ! -s $CT_STDOUT ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard output isn't empty";
+        JrnlFile $CT_STDOUT;
+    fi;
+    cmp -s $expectedOut $shellOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: 'cmp -s $expectedOut $shellOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    JrnlMsg "Testing subshell compound-command without redirection";
+    cat > $shellFile  <<EOF
+var=wrongvalue
+myfunction() (
+    echo \$var
+    exit 0
+)
+var=value
+myfunction 
+myfunction 
+EOF
+
+    echo "value" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value\"'";
+        return;
+    fi;
+    echo "value" >> $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo >> $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    JrnlMsg "Testing subshell compound-command with redirection";
+    : > $shellOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: ': > $shellOut'";
+        return;
+    fi;
+    cat > $shellFile  <<EOF
+myfunction() ( echo value >&3 ) 3> $shellOut
+myfunction 
+EOF
+
+    echo "value" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    if [ ! -s $CT_STDOUT ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard output isn't empty";
+        JrnlFile $CT_STDOUT;
+    fi;
+    cmp -s $expectedOut $shellOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: 'cmp -s $expectedOut $shellOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    JrnlMsg "Testing for loop compound-command without redirection";
+    cat > $shellFile  <<EOF
+myfunction() for var in value1 value2
+do
+    echo \$var
+done
+var=wrongvalue
+myfunction 
+EOF
+
+    echo "value1" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value1\"'";
+        return;
+    fi;
+    echo "value2" >> $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo >> $expectedOut \"value2\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    JrnlMsg "Testing for loop compound-command with redirection";
+    : > $shellOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: ': > $shellOut'";
+        return;
+    fi;
+    cat > $shellFile  <<EOF
+myfunction() for var in value; do echo \$var; done 1<> $shellOut
+myfunction 
+EOF
+
+    echo "value" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    if [ ! -s $CT_STDOUT ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard output isn't empty";
+        JrnlFile $CT_STDOUT;
+    fi;
+    cmp -s $expectedOut $shellOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: 'cmp -s $expectedOut $shellOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    JrnlMsg "Testing case .. esac compound-command without redirection";
+    cat > $shellFile  <<EOF
+var=wrongvalue
+myfunction() case \$var in
+value)
+    echo \$var
+    ;;
+esac
+var=value
+myfunction 
+EOF
+
+    echo "value" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    JrnlMsg "Testing case .. esac compound-command with redirection";
+    : > $shellOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: ': > $shellOut'";
+        return;
+    fi;
+    cat > $shellFile  <<EOF
+myfunction() case x in y) ;; *) echo value;; esac >| $shellOut
+myfunction 
+EOF
+
+    echo "value" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    if [ ! -s $CT_STDOUT ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard output isn't empty";
+        JrnlFile $CT_STDOUT;
+    fi;
+    cmp -s $expectedOut $shellOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: 'cmp -s $expectedOut $shellOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    JrnlMsg "Testing if .. fi compound-command without redirection";
+    cat > $shellFile  <<EOF
+myfunction() if false
+true
+then
+    echo \$var
+fi
+var=value
+myfunction 
+EOF
+
+    echo "value" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    JrnlMsg "Testing if .. fi compound-command with redirection";
+    : > $shellOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: ': > $shellOut'";
+        return;
+    fi;
+    cat > $shellFile  <<EOF
+myfunction() if false; then :; else echo value >&3; fi >$shellOut 3>&1
+myfunction 
+EOF
+
+    echo "value" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    if [ ! -s $CT_STDOUT ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard output isn't empty";
+        JrnlFile $CT_STDOUT;
+    fi;
+    cmp -s $expectedOut $shellOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: 'cmp -s $expectedOut $shellOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    JrnlMsg "Testing while loop compound-command without redirection";
+    cat > $shellFile  <<EOF
+myfunction() while false
+true
+do
+    echo \$var
+    break
+done
+var=value
+myfunction 
+EOF
+
+    echo "value" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    JrnlMsg "Testing while loop compound-command with redirection";
+    cat > $shellFile  <<EOF
+myfunction() while read var; do echo \$var; done << ENDINPUT
+value
+ENDINPUT
+myfunction 
+EOF
+
+    echo "value" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    JrnlMsg "Testing until loop compound-command without redirection";
+    cat > $shellFile  <<EOF
+myfunction() until true
+false
+do
+    echo \$var
+    break
+done
+var=value
+myfunction 
+EOF
+
+    echo "value" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    JrnlMsg "Testing until loop compound-command with redirection";
+    cat > $shellFile  <<EOF
+myfunction() until read var; false; do echo \$var; break; done <<- ENDINPUT
+value
+ENDINPUT
+myfunction 
+EOF
+
+    echo "value" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $shellOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp510 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 510 A "The operands to the command become the positional parameters for the"`;
+    tet_setblock;
+    TESTID=510;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<'EOF'
+myfunction() {
+    echo $1 $2
+}
+myfunction one two
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    echo "one two" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"one two\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp511 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 511 A "For the duration of the execution of the associated compound-command,"`;
+    tet_setblock;
+    TESTID=511;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<'EOF'
+myfunction() {
+    echo $# $1 $2
+}
+myfunction one two
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    echo "2 one two" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"2 one two\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp512 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 512 A "The positional parameter '0' is unchanged by the call to the function."`;
+    tet_setblock;
+    TESTID=512;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<'EOF'
+myfunction() {
+    echo $0 $1 $2
+}
+myfunction one two
+echo $0
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    printf "./$shellFile one two\n./$shellFile\n" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'printf > $expectedOut \"./$shellFile one two\n./$shellFile\n\"'";
+        return;
+    fi;
+    chmod +x $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'chmod +x $shellFile'";
+        return;
+    fi;
+    ./$shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp513 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 513 A "When the special built-in 'return' is executed in the compound-"`;
+    tet_setblock;
+    TESTID=513;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<EOF
+myfunction() {
+    echo one
+    return
+    echo two
+}
+myfunction
+echo three
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    printf "one\nthree\n" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'printf > $expectedOut \"one\nthree\n\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp514 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 514 A "When redirections are made within a function, then these redirections"`;
+    tet_setblock;
+    TESTID=514;
+    shellOut=test.${TESTID}.out;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<EOF
+myfunction() {
+    echo notfound 1>&2 
+}
+myfunction 2> /dev/null
+echo found 2> /dev/null
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    echo "found" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"found\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $shellOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp515 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 515 A "When variable assignments are made within a function, then"`;
+    tet_setblock;
+    TESTID=515;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<'EOF'
+myfunction() {
+    var=value
+}
+myfunction
+echo $var
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    echo "value" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp516 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 516 A "When a function completes, the value of the positional parameters"`;
+    tet_setblock;
+    TESTID=516;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<'EOF'
+myfunction() {
+    echo $# $0 $1 $2 $3
+}
+echo $# $0 $1 $2 $3
+myfunction one two
+echo $# $0 $1 $2 $3
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    cat > $expectedOut  <<EOF
+3 $shellFile one two three
+2 $shellFile one two
+3 $shellFile one two three
+EOF
+
+    sh $shellFile one two three > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp517 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 517 A "When a word expansion or redirection error occurs during a call to a"`;
+    tet_setblock;
+    TESTID=517;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<'EOF'
+myfunction() {
+    echo ${bad"expansion}
+}
+myfunction
+echo after-function
+EOF
+
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -eq 0 ]; then
+        SetResult $TET_FAIL "Expected exit code != 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDOUT ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard output isn't empty";
+        JrnlFile $CT_STDOUT;
+    fi;
+    if [ -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error is empty";
+    fi;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<'EOF'
+myfunction() {
+    eval echo bad-redirection 2>&9
+}
+exec 9>&-
+myfunction
+echo after-function
+EOF
+
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -eq 0 ]; then
+        SetResult $TET_FAIL "Expected exit code != 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDOUT ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard output isn't empty";
+        JrnlFile $CT_STDOUT;
+    fi;
+    if [ -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error is empty";
+    fi;
+    rm -rf $shellFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp518 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 518 A "A successful definition of a function results in an exit status "`;
+    tet_setblock;
+    TESTID=518;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<EOF
+myfunction() {
+    echo value
+}
+EOF
+
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+        if [ -s $CT_STDERR ]; then
+            JrnlFile $CT_STDERR;
+        fi;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp519 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 519 A "When a function is invoked, then the exit status of the function"`;
+    tet_setblock;
+    TESTID=519;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<EOF
+myfunction1() {
+    myfunction2
+}
+myfunction2() {
+    return 123
+}
+myfunction1
+EOF
+
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 123 ]; then
+        SetResult $TET_FAIL "Expected exit code = 123; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp520 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 520 A "SIGINT and SIGQUIT in an asynchronous list (without -m)"`;
+    tet_setblock;
+    TESTID=520;
+    if test $posix_version -ge 200809 || test $xopen_version -ge 700; then
+        shellFile=test.${TESTID}.sh;
+        cat > $shellFile  <<-'EOF'
+case $- in
+*m*) set +m ;;
+esac
+
+# test for a utility
+sleep 5 &
+kill -s INT $! || exit 1
+kill -s QUIT $! || exit 1
+wait $!
+rc=$?
+if test $rc -ne 0
+then
+echo >&2 "sleep exit status was $rc, expected 0"
+exit 1
+fi
+
+# test for a subshell
+( 
+mypid=$(sh -c 'echo $PPID')
+kill -s INT "$mypid" || exit 1
+kill -s QUIT "$mypid" || exit 1
+exit 0
+) &
+wait $!
+rc=$?
+if test $rc -ne 0
+then
+echo >&2 "first subshell exit status was $rc, expected 0"
+exit 1
+fi
+
+# test that the inherited disposition can be changed with trap
+( 
+trap "echo got SIGINT" INT
+trap - QUIT
+mypid=$(sh -c 'echo $PPID')
+kill -s INT "$mypid" || exit 1
+echo "sending SIGQUIT"
+kill -s QUIT "$mypid" || exit 1
+exit 0
+) &
+wait $!
+rc=$?
+if test $rc -lt 128
+then
+echo >&2 "second subshell exit status was $rc, expected >= 128"
+exit 1
+fi
+exit 0
+EOF
+
+        expectedOut=test.${TESTID}.exp;
+        echo "got SIGINT" > $expectedOut;
+        if [ $? -ne 0 ]; then
+            SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"got SIGINT\"'";
+            return;
+        fi;
+        echo "sending SIGQUIT" >> $expectedOut;
+        if [ $? -ne 0 ]; then
+            SetResult $TET_UNRESOLVED "Command failed: 'echo >> $expectedOut \"sending SIGQUIT\"'";
+            return;
+        fi;
+        sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+        CT_EXIT_VALUE=$?;
+        if [ $CT_EXIT_VALUE -ne 0 ]; then
+            SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+        else
+            SetResult $TET_PASS;
+        fi;
+        if [ ! -s $CT_STDERR ]; then
+            SetResult $TET_PASS;
+        else
+            SetResult $TET_FAIL "Standard error isn't empty";
+            JrnlFile $CT_STDERR;
+        fi;
+        cmp -s $CT_STDOUT $expectedOut;
+        if [ ! $? -eq 0 ]; then
+            SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+            JrnlDiff $CT_STDOUT $expectedOut;
+        else
+            SetResult $TET_PASS;
+        fi;
+        rm -rf $shellFile;
+    else
+        SetResult $TET_UNTESTED "No portable way to test.";
+    fi;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp521 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 521 A "When the command is not followed by '&', then all signals have"`;
+    tet_setblock;
+    TESTID=521;
+    SetResult $TET_UNTESTED "No portable way to test.";
+    CloseTP
+}
+tp522 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 522 A "When the shell is executing a foreground command and receives"`;
+    tet_setblock;
+    TESTID=522;
+    SetResult $TET_UNTESTED "No portable way to test.";
+    CloseTP
+}
+tp523 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 523 A "When the shell is waiting, by means of a call to 'wait' for an"`;
+    tet_setblock;
+    TESTID=523;
+    SetResult $TET_UNTESTED "No portable way to test.";
+    CloseTP
+}
+tp524 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 524 B "Unless specifically specified by the command, the environment of"`;
+    tet_setblock;
+    TESTID=524;
+    SetResult $TET_UNTESTED "No portable way to test.";
+    CloseTP
+}
+tp525 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 525 A "When a subshell is created, then the subshell environment is a "`;
+    tet_setblock;
+    TESTID=525;
+    SetResult $TET_UNTESTED "No portable way to test.";
+    CloseTP
+}
+tp526 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 526 A "When a change is made to the subshell environment, then the"`;
+    tet_setblock;
+    TESTID=526;
+    shellFile1=test.${TESTID}.sh1;
+    shellFile2=test.${TESTID}.sh2;
+    cat > $shellFile1  <<EOF
+myvariable=OK
+export myvariable
+sh ./$shellFile2
+echo \$myvariable
+EOF
+
+    cat > $shellFile2  <<EOF
+myvariable=BAD
+export myvariable
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    echo "OK" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"OK\"'";
+        return;
+    fi;
+    sh $shellFile1 > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile1 $shellFile2 $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp527 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 527 A "Command substitution is executed in a subshell environment."`;
+    tet_setblock;
+    TESTID=527;
+    shellFile=test.${TESTID}.sh;
+    echo '(echo $(echo OK))' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile '(echo \$(echo OK))''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "OK" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"OK\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp528 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 528 A "Commands that are grouped with parentheses are executed in a"`;
+    tet_setblock;
+    TESTID=528;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<'EOF'
+myvariable=OK
+export myvariable
+(myvariable=BAD; export myvariable; echo HELLO)
+echo $myvariable
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    printf "HELLO\nOK\n" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'printf > $expectedOut \"HELLO\nOK\n\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp529 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 529 B "Each command of a multi-command pipe-line is executed in a "`;
+    tet_setblock;
+    TESTID=529;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<'EOF'
+myvariable=OK
+export myvariable
+myvariable=BAD | echo $myvariable
+echo $myvariable
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    printf "OK\nOK\n" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'printf > $expectedOut \"OK\nOK\n\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp530 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 530 A "All other commands, including the shell built-ins, are executed"`;
+    tet_setblock;
+    TESTID=530;
+    shellFile=test.${TESTID}.sh;
+    printf 'var=value shift 0\necho $var\n' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'printf > $shellFile 'var=value shift 0\necho $var\n''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "value" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"value\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp531 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 531 A "When used in pattern matching, then any character in the supported"`;
+    tet_setblock;
+    TESTID=531;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo foobar' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo foobar''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "foobar" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"foobar\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp532 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 532 A "When used outside a bracket expression and immediately preceded by "`;
+    tet_setblock;
+    TESTID=532;
+    shellFile=test.${TESTID}.sh;
+    printf '%s\t\n' 'printf %s\\n foobar\|\&\;\<\>\(\)\$\`\\\"\'\''\ \?\*\[\' > $shellFile;
+    expectedOut=test.${TESTID}.exp;
+    printf '%s\t\n' 'foobar|&;<>()$`\"'\'' ?*[' > $expectedOut;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp533 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 533 A "When used in a bracket expression, each of the characters '?',"`;
+    tet_setblock;
+    TESTID=533;
+    matchFile=match.${TESTID}.\?\*\[;
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo match.'${TESTID}'.[?*[][?*[][?*[]' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo match.'${TESTID}'.[?*[][?*[][?*[]''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp534 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 534 A "When used outside a bracket expression, an unquoted '?' is a "`;
+    tet_setblock;
+    TESTID=534;
+    matchFile=match.${TESTID}.x;
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo match.'${TESTID}'.?' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo match.'${TESTID}'.?''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp535 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 535 A "A 'bracket expression' matches a single collating element."`;
+    tet_setblock;
+    TESTID=535;
+    matchFile=match.${TESTID}.x;
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo match.'${TESTID}'.[x]' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo match.'${TESTID}'.[x]''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp536 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 536 A "Within a bracket expression not starting with an exclamation mark"`;
+    tet_setblock;
+    TESTID=536;
+    matchFile=match.${TESTID}.x;
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo match.'${TESTID}'.[wxz]' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo match.'${TESTID}'.[wxz]''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp537 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 537 A "Within a bracket expression starting with an exclamation mark"`;
+    tet_setblock;
+    TESTID=537;
+    matchFile=match.${TESTID}.x;
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo match.'${TESTID}'.[!wz]' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo match.'${TESTID}'.[!wz]''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp538 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 538 A "A right bracket represents itself in a bracket expression when one"`;
+    tet_setblock;
+    TESTID=538;
+    matchFile1=match.${TESTID}.];
+    matchFile2=match.${TESTID}.x;
+    touch $matchFile1;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile1'";
+        return;
+    fi;
+    touch $matchFile2;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile2'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    printf 'echo match.%d.[]abc]\necho match.%d.[!]yz]\necho match.%d.[[.].]]\necho match.%d.[[:alpha:]]\n' $TESTID $TESTID $TESTID $TESTID > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'printf > $shellFile 'echo match.%d.[]abc]\necho match.%d.[!]yz]\necho match.%d.[[.].]]\necho match.%d.[[:alpha:]]\n' $TESTID $TESTID $TESTID $TESTID'";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'expectedOut=test.${TESTID}.exp'";
+        return;
+    fi;
+    printf "$matchFile1\n$matchFile2\n$matchFile1\n$matchFile2\n" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'printf > $expectedOut \"$matchFile1\n$matchFile2\n$matchFile1\n$matchFile2\n\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile1 $matchFile2;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp539 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 539 A "Within a bracket expression, an expression within '[. .]' is treated"`;
+    tet_setblock;
+    TESTID=539;
+    matchFile=match.${TESTID}.x;
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo match.'${TESTID}'.[[.x.]-z]' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo match.'${TESTID}'.[[.x.]-z]''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp540 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 540 A "Within a bracket expression, an expression within '[. .]' that is not"`;
+    tet_setblock;
+    TESTID=540;
+    SetResult $TET_UNTESTED "No portable way to test.";
+    CloseTP
+}
+tp541 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 541 A "Within a bracket expression, an expression within '[. .]' that is a"`;
+    tet_setblock;
+    TESTID=541;
+    SetResult $TET_UNTESTED "No portable way to test.";
+    CloseTP
+}
+tp542 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 542 A "Within a bracket expression, when a collating element is a member "`;
+    tet_setblock;
+    TESTID=542;
+    SetResult $TET_UNTESTED "No portable way to test.";
+    CloseTP
+}
+tp543 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 543 A "Within a bracket expression, when a collating element is a member"`;
+    tet_setblock;
+    TESTID=543;
+    matchFile=match.${TESTID}.x;
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo match.'${TESTID}'.[[=x=]]' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo match.'${TESTID}'.[[=x=]]''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp544 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 544 A "Within a bracket expression, one of the following character class"`;
+    tet_setblock;
+    TESTID=544;
+    matchFile=match.${TESTID}.x;
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo match.'${TESTID}'.[[:alpha:]]' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo match.'${TESTID}'.[[:alpha:]]''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp545 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 545 A "Within a bracket expression, a collating element or symbol 'c1'"`;
+    tet_setblock;
+    TESTID=545;
+    matchFile=match.${TESTID}.x;
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo match.'${TESTID}'.[x-z]' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo match.'${TESTID}'.[x-z]''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp546 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 546 A "Within a bracket expression, a collating element or symbol 'c1'"`;
+    tet_setblock;
+    TESTID=546;
+    matchFile=match.${TESTID}.x;
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'ls match.'${TESTID}'.[z-x]' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'ls match.'${TESTID}'.[z-x]''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -eq 0 ]; then
+        SetResult $TET_FAIL "Expected exit code != 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    grep -e "$matchFile" $CT_STDOUT > /dev/null;
+    if [ $? -eq 0 ]; then
+        SetResult $TET_FAIL "\"$matchFile\" was found in standard output";
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp547 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 547 A "When a bracket expression contains 2 or more consecutive range"`;
+    tet_setblock;
+    TESTID=547;
+    matchFile=match.${TESTID}.x;
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo match.'${TESTID}'.[a-cx-z]' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo match.'${TESTID}'.[a-cx-z]''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp548 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 548 A "Within a bracket expression,the hyphen character is treated as"`;
+    tet_setblock;
+    TESTID=548;
+    matchFile1=match.${TESTID}.-;
+    matchFile2=match.${TESTID}.x;
+    touch $matchFile1 $matchFile2;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile1 $matchFile2'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'shellFile=test.${TESTID}.sh'";
+        return;
+    fi;
+    cat > $shellFile  <<EOF
+echo match.${TESTID}.[-abc]
+echo match.${TESTID}.[!-yz]
+echo match.${TESTID}.[abc-]
+echo match.${TESTID}.[+--]
+echo match.${TESTID}.[[.-.]]
+EOF
+
+    expectedOut=test.${TESTID}.exp;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'expectedOut=test.${TESTID}.exp'";
+        return;
+    fi;
+    printf "$matchFile1\n$matchFile2\n$matchFile1\n$matchFile1\n$matchFile1\n" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'printf > $expectedOut \"$matchFile1\n$matchFile2\n$matchFile1\n$matchFile1\n$matchFile1\n\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile1 $matchFile2;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp549 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 549 A "When pattern matchine is used and shell quote removal is not"`;
+    tet_setblock;
+    TESTID=549;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo \*' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo \*''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "*" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"*\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp550 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 550 A "When the '<backslash>' character is used to quote characters,"`;
+    tet_setblock;
+    TESTID=550;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo \*' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo \*''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "*" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"*\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp569 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 569 A "The '*' character is a pattern that matches any string including the"`;
+    tet_setblock;
+    TESTID=569;
+    matchFile=match.${TESTID};
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo match.'${TESTID}'*' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo match.'${TESTID}'*''";
+        return;
+    fi;
+    echo 'echo *match.'${TESTID} >> $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo >> $shellFile 'echo *match.'${TESTID}'";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    printf "$matchFile\n$matchFile\n" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'printf > $expectedOut \"$matchFile\n$matchFile\n\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp570 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 570 A "The concatenation of patterns which each match a single character"`;
+    tet_setblock;
+    TESTID=570;
+    matchFile=match.${TESTID};
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo m?t*h.'${TESTID}'*' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo m?t*h.'${TESTID}'*''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp571 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 571 A "When a pattern contains one or more '*'s concatenated with one or "`;
+    tet_setblock;
+    TESTID=571;
+    matchFile=match.${TESTID};
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo *ma*ch*.'${TESTID}'*' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo *ma*ch*.'${TESTID}'*''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp575 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 575 A "A slash character in a pathname is matched by an explicit slash"`;
+    tet_setblock;
+    TESTID=575;
+    dirName=test.${TESTID}.dir;
+    matchFile=match.${TESTID}.file;
+    mkdir $dirName && touch $dirName/$matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'mkdir $dirName && touch $dirName/$matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<EOF
+echo test.${TESTID}.d*/*.${TESTID}.file
+echo test.${TESTID}.di?/*.${TESTID}.file
+echo test.${TESTID}.di[qrs]/*.${TESTID}.file
+EOF
+
+    rc=$?;
+    test $rc -eq 0;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'test $rc -eq 0'";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    printf '%s\n' "$dirName/$matchFile" "$dirName/$matchFile" "$dirName/$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'printf '%s\n' > $expectedOut \"$dirName/$matchFile\" \"$dirName/$matchFile\" \"$dirName/$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $dirName;
+    dirName="test.${TESTID}.dir[";
+    matchFile="]match.${TESTID}.file";
+    mkdir "$dirName" && ( cd "$dirName" && touch "$matchFile" );
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'mkdir \"$dirName\" && (cd \"$dirName\" && touch \"$matchFile\")'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    cat > $shellFile  <<EOF
+echo test.${TESTID}.dir[/]match.${TESTID}.file
+echo test.${TESTID}.d*[/]*.${TESTID}.file
+echo test.${TESTID}.di?[/]*.${TESTID}.file
+echo test.${TESTID}.di[qrs][/]*.${TESTID}.file
+EOF
+
+    rc=$?;
+    test $rc -eq 0;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'test $rc -eq 0'";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    printf '%s\n' "$dirName/$matchFile" "$dirName/$matchFile" "$dirName/$matchFile" "$dirName/$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'printf '%s\n' > $expectedOut \"$dirName/$matchFile\" \"$dirName/$matchFile\" \"$dirName/$matchFile\" \"$dirName/$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut "$dirName";
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp576 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 576 A "When a pathname contains a slash character, then that slash"`;
+    tet_setblock;
+    TESTID=576;
+    dirName=test.${TESTID}.dir;
+    matchFile=match.${TESTID}.file;
+    mkdir $dirName && touch $dirName/$matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'mkdir $dirName && touch $dirName/$matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo test.'${TESTID}'.d*'${TESTID}'.file' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo test.'${TESTID}'.d*'${TESTID}'.file''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$dirName/$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$dirName/$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    ! cmp -s $CT_STDOUT $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: '! cmp -s $CT_STDOUT $expectedOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    echo 'echo '${dirName}'?'${matchFile} > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo '${dirName}'?'${matchFile}'";
+        return;
+    fi;
+    echo "$dirName/$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$dirName/$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    ! cmp -s $CT_STDOUT $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: '! cmp -s $CT_STDOUT $expectedOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $dirName;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp577 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 577 A "When a pathname contains a slash character, than that slash "`;
+    tet_setblock;
+    TESTID=577;
+    dirName=test.${TESTID}.dir;
+    matchFile=match.${TESTID}.file;
+    mkdir $dirName && touch $dirName/$matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'mkdir $dirName && touch $dirName/$matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo '${dirName}'[/]'${matchFile} > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo '${dirName}'[/]'${matchFile}'";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$dirName/$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$dirName/$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    ! cmp -s $CT_STDOUT $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: '! cmp -s $CT_STDOUT $expectedOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo '${dirName}'[+-0]'${matchFile} > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo '${dirName}'[+-0]'${matchFile}'";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$dirName/$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$dirName/$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    ! cmp -s $CT_STDOUT $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: '! cmp -s $CT_STDOUT $expectedOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $dirName;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp578 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 578 A "When a filename begins with a period, then the period is only"`;
+    tet_setblock;
+    TESTID=578;
+    matchFile=.match.${TESTID};
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo *tch.'${TESTID} > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo *tch.'${TESTID}'";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    ! cmp -s $CT_STDOUT $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: '! cmp -s $CT_STDOUT $expectedOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo .*tch.'${TESTID} > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo .*tch.'${TESTID}'";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp579 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 579 A "When a filename begins with a period, then the period is not matched"`;
+    tet_setblock;
+    TESTID=579;
+    matchFile=.match.${TESTID};
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo *match.'${TESTID} > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo *match.'${TESTID}'";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    ! cmp -s $CT_STDOUT $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: '! cmp -s $CT_STDOUT $expectedOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo ?match.'${TESTID} > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo ?match.'${TESTID}'";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    ! cmp -s $CT_STDOUT $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: '! cmp -s $CT_STDOUT $expectedOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp580 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 580 A "When a filename begins with a period, then the period is not matched"`;
+    tet_setblock;
+    TESTID=580;
+    matchFile=.match.${TESTID};
+    touch $matchFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo [.]match.'${TESTID} > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo [.]match.'${TESTID}'";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    ! cmp -s $CT_STDOUT $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: '! cmp -s $CT_STDOUT $expectedOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo [,-/]match.'${TESTID} > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo [,-/]match.'${TESTID}'";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    ! cmp -s $CT_STDOUT $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_FAIL "Command failed: '! cmp -s $CT_STDOUT $expectedOut'";
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp581 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 581 A "When the specified pattern matches one or more existing filenames "`;
+    tet_setblock;
+    TESTID=581;
+    matchFile1=match.${TESTID}.a;
+    matchFile2=match.${TESTID}.b;
+    touch $matchFile1 $matchFile2;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'touch $matchFile1 $matchFile2'";
+        return;
+    fi;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo match.'${TESTID}'.?' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo match.'${TESTID}'.?''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "$matchFile1 $matchFile2" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"$matchFile1 $matchFile2\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile1 $matchFile2;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+tp582 () 
+{ 
+    $TST_TRACE;
+    CT_STDOUT=out.stdout;
+    CT_STDERR=out.stderr;
+    cmd=`OpenTP sh_09 582 A "When the specified pattern contains an invalid bracket expression,"`;
+    tet_setblock;
+    TESTID=582;
+    shellFile=test.${TESTID}.sh;
+    echo 'echo match.'${TESTID}'.[-abc]' > $shellFile;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $shellFile 'echo match.'${TESTID}'.[-abc]''";
+        return;
+    fi;
+    expectedOut=test.${TESTID}.exp;
+    echo "match.${TESTID}.[-abc]" > $expectedOut;
+    if [ $? -ne 0 ]; then
+        SetResult $TET_UNRESOLVED "Command failed: 'echo > $expectedOut \"match.${TESTID}.[-abc]\"'";
+        return;
+    fi;
+    sh $shellFile > $CT_STDOUT 2> $CT_STDERR;
+    CT_EXIT_VALUE=$?;
+    if [ $CT_EXIT_VALUE -ne 0 ]; then
+        SetResult $TET_FAIL "Expected exit code = 0; Received $CT_EXIT_VALUE";
+    else
+        SetResult $TET_PASS;
+    fi;
+    if [ ! -s $CT_STDERR ]; then
+        SetResult $TET_PASS;
+    else
+        SetResult $TET_FAIL "Standard error isn't empty";
+        JrnlFile $CT_STDERR;
+    fi;
+    cmp -s $CT_STDOUT $expectedOut;
+    if [ ! $? -eq 0 ]; then
+        SetResult $TET_FAIL "Standard output isn't the same as file '$expectedOut'";
+        JrnlDiff $CT_STDOUT $expectedOut;
+    else
+        SetResult $TET_PASS;
+    fi;
+    rm -rf $shellFile $expectedOut $matchFile1 $matchFile2;
+    if [ -z "$VSC_DEBUG" ]; then
+        rm -f $CT_STDOUT $CT_STDERR;
+    fi;
+    CloseTP
+}
+
