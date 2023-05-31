@@ -16,8 +16,8 @@ variables = env_vars_util.read_vars_file(os.path.join(TEST_PATH, "sample.env"))
 
 test_success = True
 
-# logger = logging.getLogger()
-# logger.setLevel(logging.DEBUG)
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
 
 ## Keeps track of the first time we call the parser
 first_time_calling_parser = True
