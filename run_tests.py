@@ -9,7 +9,7 @@ from shasta.json_to_ast import to_ast_node
 
 from sh_expand import expand, env_vars_util
 
-TEST_PATH = "./tests/tests/expansion"
+TEST_PATH = "./tests/expansion"
 
 variables = env_vars_util.read_vars_file(os.path.join(TEST_PATH, "sample.env"))
 # logging.info(variables)
