@@ -1,8 +1,11 @@
 name: Main workflow
 
 on:
-  pull_request:
   push:
+    branches:
+    - main
+    tags:
+
   schedule:
     - cron: '5 14 * * *'
 
