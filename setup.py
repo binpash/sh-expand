@@ -11,7 +11,4 @@ setup(name='sh-expand',
       long_description_content_type="text/markdown",
       python_requires='>=3.8',
       include_package_data=True,
-      install_requires=[
-          "shasta"  
-      ],
       )

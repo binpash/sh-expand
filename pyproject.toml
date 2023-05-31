@@ -15,6 +15,9 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: POSIX",
 ]
+dependencies = [
+  'shasta',
+]
 
 [project.urls]
 "Homepage" = "https://github.com/binpash/sh-expand"
