@@ -1,0 +1,21 @@
+[project]
+name = "sh-expand"
+version = "0.1.0"
+authors = [
+  { name="Michael Greenberg", email="michael@greenberg.science" },
+  { name="Konstantinos Kallas", email="konstantinos.kallas@hotmail.com" },
+]
+description = "A library for expanding shell ASTs"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: System Shells",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/binpash/sh-expand"
+"Bug Tracker" = "https://github.com/binpash/sh-expand/issues"
