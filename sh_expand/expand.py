@@ -128,6 +128,7 @@ safe_cases = {
                   lambda ast_node: safe_if(ast_node))
         }
 
+## KK 2023-06-01 I am not sure I understand the specification of `safe_command`.
 def safe_command(command):
     # TODO 2020-11-24 MMG which commands are safe to run in advance?
     # TODO 2020-11-24 MMG how do we differentiate it being safe to do nested expansions?
@@ -320,8 +321,8 @@ def expand_arg_char(arg_char: ArgChar, quoted, exp_state):
             raise Unimplemented("globbing", arg_char)
         return [arg_char]
     elif isinstance(arg_char, TArgChar):
-        val = arg_char.string
-        if val is None or val == "" or val == "None":
+        arg = arg_char.string
+        if arg is None or arg == "" or arg == "None":
             _type, val = lookup_variable("HOME", exp_state)
 
             if isinstance(val, InvalidVariable):
