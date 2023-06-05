@@ -1,1 +1,1 @@
-echo '/Users/mgree' is always safe
+echo /Users/mgree is always safe
