@@ -128,7 +128,9 @@ safe_cases = {
                   lambda ast_node: safe_if(ast_node))
         }
 
-## KK 2023-06-01 I am not sure I understand the specification of `safe_command`.
+## KK 2023-06-01 This function is a relic and should not be used. It once tried to
+##               determine whether running a command statically was safe,
+##               which is something that we never want to do anyway.
 def safe_command(command):
     # TODO 2020-11-24 MMG which commands are safe to run in advance?
     # TODO 2020-11-24 MMG how do we differentiate it being safe to do nested expansions?
