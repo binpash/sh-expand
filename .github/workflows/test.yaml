@@ -29,4 +29,4 @@ jobs:
 
         - name: Running Local Tests
           run: |
-            python3 run_tests.py
+            python3 run_tests.py --debug

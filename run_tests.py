@@ -1,3 +1,4 @@
+import argparse
 import copy
 import logging
 import os
@@ -10,12 +11,6 @@ from shasta.json_to_ast import to_ast_node
 from sh_expand import expand, env_vars_util
 
 TEST_PATH = "./tests/expansion"
-
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
-
-variables = env_vars_util.read_vars_file(os.path.join(TEST_PATH, "sample.env"))
-logging.info(variables)
 
 ## Keeps track of the first time we call the parser
 first_time_calling_parser = True
@@ -42,6 +37,21 @@ def parse_shell_to_asts(input_script_path) -> "list[AstNode]":
         logging.error(f'Parsing error: {e}')
         exit(1)
 
+def parse_args():
+    parser = argparse.ArgumentParser()
+    ## TODO: Import the arguments so that they are not duplicated here and in orch
+    parser.add_argument("-d", "--debug", 
+                        action="store_true",
+                        help="Print debugging output")
+    args, unknown_args = parser.parse_known_args()
+    return args
+
+def init(args):
+    logger = logging.getLogger()
+    if args.debug:
+        logger.setLevel(logging.DEBUG)
+
+
 def print_report(total: set, failures_set: set, skipped_set: set):
     skipped = len(skipped_set)
     failed = len(failures_set)
@@ -59,6 +69,12 @@ def print_report(total: set, failures_set: set, skipped_set: set):
 
 test_success = True
 
+## Parse arguments and initialize
+args = parse_args()
+init(args)
+
+variables = env_vars_util.read_vars_file(os.path.join(TEST_PATH, "sample.env"))
+logging.info(variables)
 
 print("Parsing tests from {}".format(TEST_PATH))
 
