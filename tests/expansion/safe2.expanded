@@ -1,1 +1,1 @@
-echo quoting safe stuff is safe
+echo "quoting safe stuff is safe"
