@@ -190,26 +190,29 @@ def safe_if(node):
 #   + commands just set the structural bits appropriately
 
 # when early expansion detects an error
-class EarlyError(RuntimeError):
+class ExpansionError(RuntimeError): 
+    pass 
+
+class EarlyError(ExpansionError):
     def __init__(self, arg):
         self.arg = arg
 
-class StuckExpansion(RuntimeError):
+class StuckExpansion(ExpansionError):
     def __init__(self, reason, *info):
         self.reason = reason
         self.info = info
 
-class ImpureExpansion(RuntimeError):
+class ImpureExpansion(ExpansionError):
     def __init__(self, reason, *info):
         self.reason = reason
         self.info = info
 
-class Unimplemented(RuntimeError):
+class Unimplemented(ExpansionError):
     def __init__(self, msg, ast):
         self.msg = msg
         self.ast = ast
 
-class InvalidVariable(RuntimeError):
+class InvalidVariable(ExpansionError):
     def __init__(self, var, reason):
         self.var = var
         self.reason = reason
