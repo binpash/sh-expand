@@ -1,6 +1,6 @@
 [project]
 name = "sh-expand"
-version = "0.1.4"
+version = "0.1.5"
 authors = [
   { name="Michael Greenberg", email="michael@greenberg.science" },
   { name="Konstantinos Kallas", email="konstantinos.kallas@hotmail.com" },
