@@ -71,6 +71,10 @@ def read_vars_file(var_file_path):
                 var_name = rest[:eq_index]
                 var_value = rest[(eq_index+1):]
 
+            ## interpret escape sequences in ANSI-C quoted strings
+            if var_value is not None and var_value.startswith("$"):
+                var_value = ansi_c_expand(var_value[1:])
+
             ## Strip quotes
             if var_value is not None and len(var_value) >= 2 and \
                var_value[0] == "\"" and var_value[-1] == "\"":
