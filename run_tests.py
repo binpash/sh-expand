@@ -1,4 +1,5 @@
 import argparse
+import ast
 import copy
 import logging
 import os
@@ -10,7 +11,9 @@ from shasta.json_to_ast import to_ast_node
 
 from sh_expand import expand, env_vars_util
 
-TEST_PATH = "./tests/expansion"
+TEST_PATH = "./tests/"
+TEST_EXPANSION_PATH = os.path.join(TEST_PATH, "expansion")
+TEST_VAR_PARSE_PATH = os.path.join(TEST_PATH, "variable_parse")
 
 ## Keeps track of the first time we call the parser
 first_time_calling_parser = True
@@ -73,21 +76,21 @@ test_success = True
 args = parse_args()
 init(args)
 
-variables = env_vars_util.read_vars_file(os.path.join(TEST_PATH, "sample.env"))
+variables = env_vars_util.read_vars_file(os.path.join(TEST_EXPANSION_PATH, "sample.env"))
 logging.info(variables)
 
-print("Parsing tests from {}".format(TEST_PATH))
+print("Parsing tests from {}".format(TEST_EXPANSION_PATH))
 
-tests = os.listdir(TEST_PATH)
-tests = [test for test in tests if test.endswith(".sh")]
-tests.sort()
+expansion_tests = os.listdir(TEST_EXPANSION_PATH)
+expansion_tests = [test for test in expansion_tests if test.endswith(".sh")]
+expansion_tests.sort()
 
 print("* Analysis tests ")
 
 analysis_failures = set()
 analysis_skipped = set()
-for test_name in tests:
-    test = os.path.join(TEST_PATH, test_name)
+for test_name in expansion_tests:
+    test = os.path.join(TEST_EXPANSION_PATH, test_name)
     ast_objects = parse_shell_to_asts(test)
     logging.info(f'Test: {test_name}')
     logging.info(f'Ast: {ast_objects}')
@@ -109,15 +112,15 @@ for test_name in tests:
 if len(analysis_failures) > 0:
     test_success = False
 
-print_report(tests, analysis_failures, analysis_skipped)
+print_report(expansion_tests, analysis_failures, analysis_skipped)
 
 
 print("\n* Expansion tests")
 
 expansion_failures = set()
 expansion_skipped = set()
-for test_name in tests:
-    test = os.path.join(TEST_PATH, test_name)
+for test_name in expansion_tests:
+    test = os.path.join(TEST_EXPANSION_PATH, test_name)
     ast_objects = parse_shell_to_asts(test)
     logging.info(f'Test: {test_name}')
     logging.info(f' | Ast: {ast_objects}')
@@ -129,7 +132,7 @@ for test_name in tests:
         continue
 
 
-    expanded = os.path.join(TEST_PATH, test_name.replace("sh","expanded"))
+    expanded = os.path.join(TEST_EXPANSION_PATH, test_name.replace("sh","expanded"))
     expected_safe = os.path.exists(expanded)
     exp_state = expand.ExpansionState(variables)
     for (i, ast_object) in enumerate(ast_objects):
@@ -168,7 +171,75 @@ for test_name in tests:
 if len(expansion_failures) > 0:
     test_success = False
 
-print_report(tests, expansion_failures, expansion_skipped)
+print_report(expansion_tests, expansion_failures, expansion_skipped)
+
+print("\n* Variable parse tests")
+
+var_parse_tests = os.listdir(TEST_VAR_PARSE_PATH)
+var_parse_tests = [test for test in var_parse_tests if test.endswith(".env")]
+var_parse_tests.sort()
+
+var_parse_failures = set()
+var_parse_skipped = set()
+
+for test_name in var_parse_tests:
+    bash_version = (5, 0, 17) if "old" in test_name else None # else latest
+    test = os.path.join(TEST_VAR_PARSE_PATH, test_name)
+    logging.info(f'Test: {test_name}')
+
+    skip_test = test_name.startswith("skip")
+    if skip_test:
+        logging.info(f'Skipping...')
+        var_parse_skipped.add(test_name)
+        continue
+
+    expected_var_file = os.path.join(TEST_VAR_PARSE_PATH, test_name.replace(".env","_expected.py"))
+    expected_success = os.path.exists(expected_var_file)
+
+    expected = None
+    if expected_success:
+        with open(expected_var_file) as f:
+            expected = ast.literal_eval(f.read())
+
+    try:
+        got = env_vars_util.read_vars_file(test, bash_version_tuple=bash_version)
+    except ValueError:
+        if expected_success:
+            var_parse_failures.add(test_name)
+            print("Found unexpected failure in", test_name)
+            print("Error: ", traceback.format_exc())
+        else:
+            print("Found expected failure in", test_name)
+    except Exception as e:
+       print(f"Error in {test_name}:", traceback.format_exc())
+       var_parse_failures.add(test_name)
+    else:
+        logging.info(f"Variables: {got}")
+        success = expected == got
+        if success and not expected_success:
+            print("Unexpected success in", test_name)
+            print(got)
+            var_parse_failures.add(test_name)
+        elif not success and expected_success:
+            print(f"In {test_name} expected vs got: ")
+            exp_keys = list(expected.keys())
+            exp_keys.sort()
+            got_keys = list(got.keys())
+            got_keys.sort()
+            try:
+                assert exp_keys == got_keys
+            except:
+                breakpoint()
+
+            for k in exp_keys:
+                if expected[k] != got[k]:
+                    print(f"for {k}, expected {expected[k]}, got {got[k]}")
+            var_parse_failures.add(test_name)
+       
+if len(expansion_failures) > 0:
+    test_success = False
+
+print_report(var_parse_tests, var_parse_failures, var_parse_skipped)
 
 if test_success:
     exit(0)
