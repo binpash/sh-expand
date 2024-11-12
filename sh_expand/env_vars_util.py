@@ -13,7 +13,7 @@ def get_bash_version():
     if bash_version is not None:
         return bash_version
     try:
-        out = subprocess.run(["bash", "-c", "echo ${BASH_VERSINFO[@]}"])
+        out = subprocess.run(["bash", "-c", "echo ${BASH_VERSINFO[@]}"], capture_output=True)
     # bash isn't on the system
     except FileNotFoundError:
         return None
