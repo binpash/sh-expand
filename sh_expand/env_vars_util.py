@@ -7,26 +7,9 @@ from sh_expand.util import log, print_time_delta
 
 bash_version = None
 
-def get_bash_version():
-    global bash_version
-    
-    if bash_version is not None:
-        return bash_version
-    try:
-        out = subprocess.run(["bash", "-c", "echo ${BASH_VERSINFO[@]}"], capture_output=True)
-    # bash isn't on the system
-    except FileNotFoundError:
-        return None
-    bash_version = tuple(int(v) for v in out.stdout.split(b" ")[:4])
-    return bash_version
-
-
 def read_vars_file(var_file_path, bash_version_tuple = None):
     if var_file_path is not None:
         log(f'Reading variables from: {var_file_path}')
-
-        if bash_version_tuple is None:
-            bash_version_tuple = get_bash_version()
 
         if bash_version_tuple is not None and bash_version_tuple < (5, 2, 0):
             vars_dict = read_vars_file_old(var_file_path)
