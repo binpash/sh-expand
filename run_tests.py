@@ -227,10 +227,7 @@ for test_name in var_parse_tests:
             exp_keys.sort()
             got_keys = list(got.keys())
             got_keys.sort()
-            try:
-                assert exp_keys == got_keys
-            except:
-                breakpoint()
+            assert exp_keys == got_keys
 
             for k in exp_keys:
                 if expected[k] != got[k]:
