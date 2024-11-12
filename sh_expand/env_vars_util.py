@@ -7,11 +7,11 @@ from sh_expand.util import log, print_time_delta
 
 bash_version = None
 
-def read_vars_file(var_file_path, bash_version_tuple = None):
+def read_vars_file(var_file_path, bash_version_tuple):
     if var_file_path is not None:
         log(f'Reading variables from: {var_file_path}')
 
-        if bash_version_tuple is not None and bash_version_tuple < (5, 2, 0):
+        if bash_version_tuple < (5, 2, 0):
             vars_dict = read_vars_file_old(var_file_path)
         else:
             vars_dict = read_vars_file_new(var_file_path)
