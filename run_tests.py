@@ -183,7 +183,7 @@ var_parse_failures = set()
 var_parse_skipped = set()
 
 for test_name in var_parse_tests:
-    bash_version = (5, 0, 17) if "old" in test_name else None # else latest
+    bash_version = (5, 0, 17) if "old" in test_name else (5, 2, 32)
     test = os.path.join(TEST_VAR_PARSE_PATH, test_name)
     logging.info(f'Test: {test_name}')
 
@@ -236,7 +236,7 @@ for test_name in var_parse_tests:
                     print(f"for {k}, expected {expected[k]}, got {got[k]}")
             var_parse_failures.add(test_name)
        
-if len(expansion_failures) > 0:
+if len(var_parse_failures) > 0:
     test_success = False
 
 print_report(var_parse_tests, var_parse_failures, var_parse_skipped)
