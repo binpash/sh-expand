@@ -76,7 +76,7 @@ test_success = True
 args = parse_args()
 init(args)
 
-variables = env_vars_util.read_vars_file(os.path.join(TEST_EXPANSION_PATH, "sample.env"))
+variables = env_vars_util.read_vars_file(os.path.join(TEST_EXPANSION_PATH, "sample.env"), (5, 0, 17))
 logging.info(variables)
 
 print("Parsing tests from {}".format(TEST_EXPANSION_PATH))
