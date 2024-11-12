@@ -5,13 +5,21 @@ from datetime import datetime
 
 from sh_expand.util import log, print_time_delta
 
+bash_version = None
+
 def get_bash_version():
+    global bash_version
+    
+    if bash_version is not None:
+        return bash_version
     try:
         out = subprocess.run(["bash", "-c", "echo ${BASH_VERSINFO[@]}"])
     # bash isn't on the system
     except FileNotFoundError:
         return None
-    return tuple(int(v) for v in out.stdout.split(b" ")[:4])
+    bash_version = tuple(int(v) for v in out.stdout.split(b" ")[:4])
+    return bash_version
+
 
 def read_vars_file(var_file_path, bash_version_tuple = None):
     if var_file_path is not None:
