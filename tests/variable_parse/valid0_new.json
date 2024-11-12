@@ -1,0 +1,17 @@
+{
+ "BASH": [null, "/bin/bash"],
+ "BASHOPTS": ["-r", "checkwinsize:cmdhist:complete_fullquote:expand_aliases:extglob:extquote:force_fignore:globasciiranges:globskipdots:histappend:interactive_comments:login_shell:patsub_replacement:progcomp:promptvars:sourcepath"],
+ "BASHPID": ["-i", ""],
+ "BASHPID2": ["-i", "2"],
+ "BASH_ALIASES": [null, []],
+ "BASH_ARGC": [null, ["0"]],
+ "BASH_VERSINFO": [null, ["5", "2", "21", "1", "release", "x86_64-pc-linux-gnu"]],
+ "COMP_WORDBREAKS": [null, " \t\n\"'><=;|&(:"],
+ "IFS": [null, " \t\n"],
+ "LESSOPEN": ["-x", "| /usr/bin/lesspipe %s"],
+ "HOSTNAME": [null, "redoxvm"],
+ "HOSTTYPE": ["-r", "x86_64"],
+ "HUSHLOGIN": ["-x", "FALSE"],
+ "TEST": ["-x", ""],
+ "TEST2": ["-x", ""]
+}

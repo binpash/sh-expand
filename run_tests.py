@@ -1,6 +1,6 @@
 import argparse
-import ast
 import copy
+import json
 import logging
 import os
 import traceback
@@ -193,13 +193,14 @@ for test_name in var_parse_tests:
         var_parse_skipped.add(test_name)
         continue
 
-    expected_var_file = os.path.join(TEST_VAR_PARSE_PATH, test_name.replace(".env","_expected.py"))
+    expected_var_file = os.path.join(TEST_VAR_PARSE_PATH, test_name.replace(".env",".json"))
     expected_success = os.path.exists(expected_var_file)
 
     expected = None
     if expected_success:
         with open(expected_var_file) as f:
-            expected = ast.literal_eval(f.read())
+            expected = json.load(f)
+        expected = {k: tuple(v) for k, v in expected.items()}
 
     try:
         got = env_vars_util.read_vars_file(test, bash_version_tuple=bash_version)
