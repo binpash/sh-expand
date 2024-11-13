@@ -4,7 +4,7 @@ from pathlib import Path
 long_description = (Path(__file__).parent / "README.md").read_text()
 
 setup(name='sh-expand',
-      version='0.1.6',
+      version='0.1.7',
       packages=['sh_expand'],
       ## Necessary for the markdown to be properly rendered
       long_description=long_description,
