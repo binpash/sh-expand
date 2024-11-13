@@ -1,85 +1,138 @@
 import shlex
+import subprocess
+
 from datetime import datetime
 
 from sh_expand.util import log, print_time_delta
 
-def read_vars_file(var_file_path):
-    log(f'Reading variables from: {var_file_path}')
+bash_version = None
 
-    if(not var_file_path is None):
-        vars_dict = {}
-        # with open(var_file_path) as f:
-        #     lines = [line.rstrip() for line in f.readlines()]
+def read_vars_file(var_file_path, bash_version_tuple):
+    if var_file_path is not None:
+        log(f'Reading variables from: {var_file_path}')
 
-        with open(var_file_path) as f:
-            variable_reading_start_time = datetime.now()
-            data = f.read()
-            variable_reading_end_time = datetime.now()
-            print_time_delta("Variable Reading", variable_reading_start_time, variable_reading_end_time)
-
-            variable_tokenizing_start_time = datetime.now()
-            ## TODO: Can we replace this tokenizing process with our own code? This is very slow :'(
-            ##       It takes about 15ms on deathstar.
-            tokens = shlex.split(data)
-            variable_tokenizing_end_time = datetime.now()
-            print_time_delta("Variable Tokenizing", variable_tokenizing_start_time, variable_tokenizing_end_time)
-            # log(f'Tokens: {tokens}')
-
-        # MMG 2021-03-09 definitively breaking on newlines (e.g., IFS) and function outputs (i.e., `declare -f`)
-        # KK  2021-10-26 no longer breaking on newlines (probably)
-
-        ## At the start of each iteration token_i should point to a 'declare'
-        token_i = 0
-        while token_i < len(tokens):
-            # FIXME is this assignment needed?
-            export_or_typeset = tokens[token_i]
-
-            ## Array variables require special parsing treatment
-            if (export_or_typeset == "declare" and is_array_variable(tokens[token_i+1])):
-                var_name, var_type, var_value, new_token_i = parse_array_variable(tokens, token_i)
-                vars_dict[var_name] = (var_type, var_value)
-                token_i = new_token_i
-                continue
-
-            new_token_i = find_next_delimiter(tokens, token_i)
-            rest = " ".join(tokens[(token_i+1):new_token_i])
-            token_i = new_token_i
-
-            space_index = rest.find(' ')
-            eq_index = rest.find('=')
-            var_type = None
-
-            ## Declared but unset?
-            if eq_index == -1:
-                if space_index != -1:
-                    var_name = rest[(space_index+1):]
-                    var_type = rest[:space_index]
-                else:
-                    var_name = rest
-                var_value = ""
-            ## Set, with type
-            elif(space_index < eq_index and not space_index == -1):
-                var_type = rest[:space_index]
-
-                if var_type == "--":
-                    var_type = None
-                
-                var_name = rest[(space_index+1):eq_index]
-                var_value = rest[(eq_index+1):]
-            ## Set, without type
-            else:
-                var_name = rest[:eq_index]
-                var_value = rest[(eq_index+1):]
-
-            ## Strip quotes
-            if var_value is not None and len(var_value) >= 2 and \
-               var_value[0] == "\"" and var_value[-1] == "\"":
-                var_value = var_value[1:-1]                
-                
-            vars_dict[var_name] = (var_type, var_value)
+        if bash_version_tuple < (5, 2, 0):
+            vars_dict = read_vars_file_old(var_file_path)
+        else:
+            vars_dict = read_vars_file_new(var_file_path)
 
         final_vars_dict = set_special_parameters(vars_dict)
         return final_vars_dict
+
+## Difference is that, bash pre 5.2, `declare -p` literally
+## prints newlines (and other control codes), while in newer versions
+## the newlines are escaped. This allows us to read the file line by line,
+## instead of slowly lexing it with `shlex.split`.
+## Additionally, shlex breaks when there are escaped single quotes in $'...'
+## strings, while this does not
+def read_vars_file_new(var_file_path):
+    vars_dict = {}
+    with open(var_file_path) as f:
+        for line in f:
+            # remove newline
+            line = line[:-1]
+            _, var_type, rest = line.split(" ", maxsplit=2)
+
+            ## TODO: This doesn't handle associative arrays
+            if is_array_variable(var_type):
+                ## TODO: Refactor to not use shlex to handle the specific case
+                ## of escaped single quotes in ANSI-C strings
+                var_name, var_type, val, _ = parse_array_variable(shlex.split(line), 0)
+            else:
+                if var_type == "--":
+                    var_type = None
+                if "=" in rest:
+                    var_name, val = rest.split("=", maxsplit=1)
+                    if val[0:2] == "$'":
+                        val = ansi_c_expand(val[1:])
+                    val = val[1:-1]
+                else:
+                    # declared but unset
+                    var_name = rest
+                    val = ""
+
+            vars_dict[var_name] = (var_type, val)
+
+    return vars_dict
+
+
+def read_vars_file_old(var_file_path):
+    vars_dict = {}
+    # with open(var_file_path) as f:
+    #     lines = [line.rstrip() for line in f.readlines()]
+
+    with open(var_file_path) as f:
+        variable_reading_start_time = datetime.now()
+        data = f.read()
+        variable_reading_end_time = datetime.now()
+        print_time_delta("Variable Reading", variable_reading_start_time, variable_reading_end_time)
+
+        variable_tokenizing_start_time = datetime.now()
+        ## TODO: Can we replace this tokenizing process with our own code? This is very slow :'(
+        ##       It takes about 15ms on deathstar.
+        tokens = shlex.split(data)
+        variable_tokenizing_end_time = datetime.now()
+        print_time_delta("Variable Tokenizing", variable_tokenizing_start_time, variable_tokenizing_end_time)
+        # log(f'Tokens: {tokens}')
+
+    # MMG 2021-03-09 definitively breaking on newlines (e.g., IFS) and function outputs (i.e., `declare -f`)
+    # KK  2021-10-26 no longer breaking on newlines (probably)
+
+    ## At the start of each iteration token_i should point to a 'declare'
+    token_i = 0
+    while token_i < len(tokens):
+        # FIXME is this assignment needed?
+        export_or_typeset = tokens[token_i]
+
+        ## Array variables require special parsing treatment
+        if (export_or_typeset == "declare" and is_array_variable(tokens[token_i+1])):
+            var_name, var_type, var_value, new_token_i = parse_array_variable(tokens, token_i)
+            vars_dict[var_name] = (var_type, var_value)
+            token_i = new_token_i
+            continue
+
+        new_token_i = find_next_delimiter(tokens, token_i)
+        rest = " ".join(tokens[(token_i+1):new_token_i])
+        token_i = new_token_i
+
+        space_index = rest.find(' ')
+        eq_index = rest.find('=')
+        var_type = None
+
+        ## Declared but unset?
+        if eq_index == -1:
+            if space_index != -1:
+                var_name = rest[(space_index+1):]
+                var_type = rest[:space_index]
+            else:
+                var_name = rest
+            var_value = ""
+        ## Set, with type
+        elif(space_index < eq_index and not space_index == -1):
+            var_type = rest[:space_index]
+
+            if var_type == "--":
+                var_type = None
+            
+            var_name = rest[(space_index+1):eq_index]
+            var_value = rest[(eq_index+1):]
+        ## Set, without type
+        else:
+            var_name = rest[:eq_index]
+            var_value = rest[(eq_index+1):]
+
+        ## interpret escape sequences in ANSI-C quoted strings
+        if var_value is not None and var_value.startswith("$"):
+            var_value = ansi_c_expand(var_value[1:])
+
+        ## Strip quotes
+        if var_value is not None and len(var_value) >= 2 and \
+           var_value[0] == "\"" and var_value[-1] == "\"":
+            var_value = var_value[1:-1]                
+            
+        vars_dict[var_name] = (var_type, var_value)
+
+    return vars_dict
 
 
 ## This sets the values of the special shell parameters correctly
@@ -223,11 +276,11 @@ def parse_array_variable(tokens, i):
             ## Set the next item
             var_values.append(item_value)
 
-            
-
             ## Get next array_item
             curr_i += 1
-            array_item = tokens[curr_i]
+            ## to avoid unnecessary index out of bounds error
+            if not done:
+                array_item = tokens[curr_i]
         
         next_i = curr_i
 
