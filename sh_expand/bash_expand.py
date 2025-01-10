@@ -1,15 +1,16 @@
 from __future__ import annotations
 
 import os
-import re
 import sys
 import tempfile
 from collections.abc import Callable
+from contextlib import contextmanager
 from typing import TextIO
 
 import pexpect
 from shasta.ast_node import (
     AndNode,
+    ArgChar,
     ArithForNode,
     ArithNode,
     AssignNode,
@@ -41,32 +42,141 @@ from shasta.ast_node import (
     WhileNode,
 )
 
+from sh_expand.expand import (
+    ImpureExpansion,
+    StuckExpansion,
+    Unimplemented,
+)
+
 PS1 = "EXPECT$ "
-ESCAPED_PS1 = re.escape(PS1)
+RCFILE = os.path.join(os.path.dirname(__file__), "bashrc.sh")
+
+BASH_COMMAND = [
+    "/usr/bin/env",
+    "bash",
+    "--rcfile",
+    RCFILE,
+    "--noediting",
+    "-i",
+    "-a",  # exports all vars, needed for pash
+]
+STR_COMMAND = " ".join(BASH_COMMAND)
 
 
 def expand_command(
-    ast: AstNode, exp_state: BashExpansionState, env_vars_file: str | None = None
+    ast: AstNode,
+    exp_state: BashExpansionState,
+    env_vars_file: str,
+    env_vars_state: dict,
 ) -> AstNode:
-    if env_vars_file is not None:
-        exp_state.sync_run_line_command_mirror(f"source '{env_vars_file}'")
+    exp_state.run_command(source_file_cmd(env_vars_file))
+    check_dangerous_sets(env_vars_state)
+    # TODO: Reflect shopts
+    # I suspect most won't be relevant
+    # given there are no globs or process substitutions
     return compile_node(ast, exp_state)
 
 
-def should_expand(word: list[CArgChar]) -> bool:
-    # somewhat conservative
-    special_chars = {ord(c) for c in ("$", "`", "~")}
-    return any(c.char in special_chars for c in word)
+# NOTE: Shell expansion is very complex.
+# I accounted for the cases I recognized, but it's likely that
+# there are cases which I missed.
+
+# NOTE: This is temporary code, until we have proper arg chars.
+# It is janky.
+
+# NOTE: This is doesn't check for cases where pash would error anyways
+# like eval, set -u in the region, etc. This limits its usage without pash.
+
+# Design:
+
+# 1. Any word that could cause or be effected by a side effect
+# (process substitution or globbing) raise an exception
+# 2. Anything with a to-expand character is expanded with quotes
+# 3. Anything else is left as is
+
+# ? is to handle globbing but also ${x:?err msg}
+globbing_chars = set("*?!")
+dangerous_tildes = {"~+", "~-"}
+
+# Quotes are expanded to normalize " vs ' vs $'
+need_to_expand_chars = set("{$~[\"'")
+
+
+def should_expand_var(word: list[CArgChar]) -> bool:
+    expand = False
+    chars = []
+    seen_dollar_sign = False
+
+    # arithmetic should be safe
+    start = join_argchars_as_str(word[:3])
+    if start == "$((" and not any(c.char == ord("=") for c in word):
+        return True
+
+    for i, carg in enumerate(word):
+        char = chr(carg.char)
+        chars.append(char)
+        if char == "\x7f":
+            # TODO: Probably some pexpect bug
+            # script runs in bash
+            raise StuckExpansion("Delete character", carg)
+        if char in globbing_chars:
+            raise Unimplemented("Potential globbing:", carg)
+        if char == "`":
+            raise ImpureExpansion("Potential backtick process substitution:", carg)
+        if seen_dollar_sign and char == "=":
+            raise ImpureExpansion("Potential assignment", carg)
+
+        pair = "".join(chars[-2:])
+        if pair in dangerous_tildes:
+            raise ImpureExpansion("Potential dangerous tilde expansion:", carg)
+        if pair in {"<(", ">(", "$("}:
+            raise ImpureExpansion("Potential process substitution", carg)
+        if char == "(":
+            raise ImpureExpansion("Potential array", carg)
+        if char == "$":
+            seen_dollar_sign = True
+        if char in need_to_expand_chars:
+            expand = True
+
+    return expand
+
+
+def check_dangerous_sets(env_dict):
+    unsafe_sets = "u"
+    try:
+        sets = env_dict["$-"]
+    except KeyError:
+        pass
+    else:
+        if any((unsafe_s := s) in sets for s in unsafe_sets):
+            raise Unimplemented("can't handle the set:", unsafe_s)
+
+
+def source_file_cmd(file: str) -> str:
+    return f"source '{file}' 2> /dev/null"
 
 
 def default_log(*args, **kwargs) -> None:
     print(*args, file=sys.stderr, **kwargs)
 
 
+def str_to_quoted_arg_char(data: str) -> QArgChar:
+    return QArgChar([CArgChar(ord(c)) for c in data])
+
+
+def str_to_arg_chars(data: str) -> list[CArgChar]:
+    return [CArgChar(ord(c)) for c in data]
+
+
+def join_argchars_as_str(data: list[ArgChar]) -> str:
+    return "".join(c.format() for c in data)
+
+
 class BashExpansionState:
     temp_dir: str | None
     var_file: TextIO
     var_file_path: str
+    debug: bool
 
     bash_mirror: pexpect.spawn
     is_open: bool
@@ -86,97 +196,105 @@ class BashExpansionState:
         if open:
             self.open()
 
-    def open(self):
-        if self.is_open:
-            return
-        var_file_fd, var_file_path = tempfile.mkstemp(
-            dir=self.temp_dir, prefix="bash_expand_vars", text=True
-        )
-        self.var_file_path = var_file_path
-        self.var_file = os.fdopen(var_file_fd, "w+")
-
-        ## Spawn a bash process to ask it for expansions
+    def spawn_bash(self) -> pexpect.spawn:
         p = pexpect.spawn(
-            "/usr/bin/env",
-            ["bash", "--norc", "--noediting", "-i"],
+            BASH_COMMAND[0],
+            BASH_COMMAND[1:],
             encoding="utf-8",
             echo=False,
+            timeout=1,
         )
-        ## If we are in debug mode also log the bash's output
+        p.expect_exact(PS1)
         if self.debug:
             log_path, log_file = self.make_temp_file("bash_mirror_log")
             self.log("bash mirror log saved in:", log_path)
             p.logfile = log_file
 
-        self.bash_mirror = p
-        self.is_open = True
-        self.set_ps1()
+        return p
 
+    def open(self):
+        if self.is_open:
+            self.close()
+
+        self.var_file_path, self.var_file = self.make_temp_file("bash_expand_vars")
+        self.bash_mirror = self.spawn_bash()
+        self.is_open = True
 
     def close(self):
+        if not self.is_open:
+            return
+
         self.is_open = False
-        self.bash_mirror.logfile.close()
-        self.bash_mirror.close(force=True)
+        if self.bash_mirror.logfile is not None:
+            self.bash_mirror.logfile.close()
+        try:
+            self.bash_mirror.close(force=True)
+        except pexpect.ExceptionPexpect:
+            # TODO: Fails sometimes
+            pass
         self.var_file.close()
         os.remove(self.var_file_path)
 
-    def set_ps1(self):
-        # must be read only to prevent the expansion from being messed up
-        self.sync_run_line_command_mirror(f"readonly PS1='{PS1}'")
+    @contextmanager
+    def subshell(self):
+        try:
+            self.run_command(STR_COMMAND)
+            yield
+        finally:
+            self.run_command("exit")
 
-    def update_var_file(self, assignment: str):
+    def update_var_file(self, node: AstNode):
         assert self.is_open
-        self.var_file.write(assignment + "\n")
+
+        self.var_file.write(node.pretty() + "\n")
 
     def update_bash_mirror_vars(self):
-        assert self.is_open
-
-        self.sync_run_line_command_mirror(f"source '{self.var_file_path}'")
+        self.run_command(source_file_cmd(self.var_file_path))
 
         # variables have been saved in the bash process
         self.var_file.truncate(0)
 
     def expand_word(self, word: str) -> list[str]:
         assert self.is_open
-
         self.log("To expand with bash:", word)
 
         # null seperated to avoid spliting on data
         command = rf"printf '%s\0' {word}"
-        output = self.sync_run_line_command_mirror(command)
+        self.log(f"Command to run: {repr(command)}")
+        output = self.run_command(command)
 
         # remove trailing \0
         split_output = output.split("\0")[:-1]
         self.log("Bash expansion output is:", split_output)
         return split_output
 
-    def sync_run_line_command_mirror(self, command: str) -> str:
+    def expand_no_split(self, word: str):
+        assert self.is_open
+        self.log("To expand with bash:", word)
+
+        command = f"echo -n {word}"
+        output = self.run_command(command)
+
+        self.log("Bash expansion output is:", output)
+        return output
+
+    def unset_vars(self, vars: list[AssignNode]):
+        if vars:
+            var_names = " ".join(var.var for var in vars)
+            self.run_command(f"unset -v {var_names}")
+
+    def run_command(self, bash_command: str) -> str:
         assert self.is_open
 
-        bash_command = command
         self.log("Executing bash command in mirror:", bash_command)
 
-        # Note: this will eventually need to be changed to support non-utf8 characters
-        self.bash_mirror.sendline(str(bash_command))
+        self.bash_mirror.sendline(bash_command)
+        self.bash_mirror.expect_exact(PS1)
 
-        data = self.wait_bash_mirror()
-        self.log("mirror done!")
+        data = self.bash_mirror.before
+        self.log(f"Mirror done with output {data}")
 
         return data
-
-    def wait_bash_mirror(self) -> str:
-        assert self.is_open
-
-        r = self.bash_mirror.expect(ESCAPED_PS1)
-        assert r == 0
-        output: str = self.bash_mirror.before
-
-        ## I am not sure why, but \r s are added before \n s
-        output = output.replace("\r\n", "\n")
-
-        self.log("Before the prompt!")
-        self.log(output.replace("\0", "<NUL>"))
-        return output
 
     def log(self, *args, **kwargs):
         if self.debug:
@@ -241,19 +359,30 @@ def compile_node(ast_object: AstNode, exp_state: BashExpansionState) -> AstNode:
 
 
 def compile_node_pipe(ast_node: PipeNode, exp_state: BashExpansionState):
-    ast_node.items = [compile_node(item, exp_state) for item in ast_node.items]
+    # TODO: Handle shopt -s lastpipe
+    with exp_state.subshell():
+        ast_node.items = [compile_node(item, exp_state) for item in ast_node.items]
     return ast_node
 
 
 def compile_node_command(ast_node: CommandNode, exp_state: BashExpansionState):
+    if ast_node.assignments and not ast_node.arguments:
+        raise ImpureExpansion("Assignment", ast_node)
+
     ast_node.assignments = compile_command_assignments(ast_node.assignments, exp_state)
     ast_node.arguments = compile_command_arguments(ast_node.arguments, exp_state)
+    exp_state.unset_vars(ast_node.assignments)
+
+    # TODO: Allow declare, set, readonly, local, etc and remove the
+    # corrosponding ast_node
+
     ast_node.redir_list = compile_redirections(ast_node.redir_list, exp_state)
     return ast_node
 
 
 def compile_node_subshell(ast_node: SubshellNode, exp_state: BashExpansionState):
-    ast_node.body = compile_node(ast_node.body, exp_state)
+    with exp_state.subshell():
+        ast_node.body = compile_node(ast_node.body, exp_state)
     return ast_node
 
 
@@ -287,33 +416,53 @@ def compile_node_redir(ast_node: RedirNode, exp_state: BashExpansionState):
 
 
 def compile_node_background(ast_node: BackgroundNode, exp_state: BashExpansionState):
-    ast_node.node = compile_node(ast_node.node, exp_state)
     ast_node.redir_list = compile_redirections(ast_node.redir_list, exp_state)
+    with exp_state.subshell():
+        ast_node.node = compile_node(ast_node.node, exp_state)
     return ast_node
+
+
+# NOTE: Any node that introduces a new variable
+# cannot be expanded currently, since we cannot
+# distinguish between the unexpandable new variable
+# and the old variables
 
 
 def compile_node_defun(ast_node: DefunNode, exp_state: BashExpansionState):
-    ast_node.name = compile_command_argument(ast_node.name, exp_state)
-    ast_node.body = compile_node(ast_node.body, exp_state)
-    return ast_node
+    raise Unimplemented("Invalidating the positional variables", ast_node)
+    # ast_node.name = compile_command_argument(ast_node.name, exp_state)
+    # ast_node.body = compile_node(ast_node.body, exp_state)
+    # return ast_node
 
 
 def compile_node_for(ast_node: ForNode, exp_state: BashExpansionState):
-    ast_node.variable = compile_command_argument(ast_node.variable, exp_state)
-    ast_node.argument = compile_command_arguments(ast_node.argument, exp_state)
-    # NOTE: The body might or might not be compiled depending on design
-    # ast_node.body = compile_node(ast_node.body, exp_state)
-    return ast_node
+    raise Unimplemented("Invalidating the for loop variable", ast_node)
+    # ast_node.variable = compile_command_argument(ast_node.variable, exp_state)
+    # ast_node.argument = compile_command_arguments(ast_node.argument, exp_state)
+    # # NOTE: The body might or might not be compiled depending on design
+    # # ast_node.body = compile_node(ast_node.body, exp_state)
+    # return ast_node
 
 
 def compile_node_while(ast_node: WhileNode, exp_state: BashExpansionState):
-    ast_node.test = compile_command_argument(ast_node.test, exp_state)
+    ast_node.test = compile_node(ast_node.test, exp_state)
     ast_node.body = compile_node(ast_node.body, exp_state)
     return ast_node
 
 
+# NOTE: In pash, a node like:
+
+# > x=2
+# > if command; do
+# >     x=3
+# > fi
+# > {run command in parallel with $x}
+
+# is impossible, so control flow should be safe.
+
+
 def compile_node_if(ast_node: IfNode, exp_state: BashExpansionState):
-    ast_node.cond = compile_command_argument(ast_node.cond, exp_state)
+    ast_node.cond = compile_node(ast_node.cond, exp_state)
     ast_node.then_b = compile_node(ast_node.then_b, exp_state)
     ast_node.else_b = (
         compile_node(ast_node.else_b, exp_state) if ast_node.else_b else None
@@ -328,14 +477,15 @@ def compile_node_case(ast_node: CaseNode, exp_state: BashExpansionState):
 
 
 def compile_node_select(ast_node: SelectNode, exp_state: BashExpansionState):
-    ast_node.variable = compile_command_argument(ast_node.variable, exp_state)
-    ast_node.body = compile_node(ast_node.body, exp_state)
-    ast_node.map_list = compile_command_arguments(ast_node.map_list, exp_state)
-    return ast_node
+    raise Unimplemented("Invalidating the select variable", ast_node)
+    # ast_node.variable = compile_command_argument(ast_node.variable, exp_state)
+    # ast_node.body = compile_node(ast_node.body, exp_state)
+    # ast_node.map_list = compile_command_arguments(ast_node.map_list, exp_state)
+    # return ast_node
 
 
 def compile_node_arith(ast_node: ArithNode, exp_state: BashExpansionState):
-    ast_node.body = compile_command_arguments(ast_node.body, exp_state)
+    ast_node.body = compile_arith_arguments(ast_node.body, exp_state)
     return ast_node
 
 
@@ -353,17 +503,19 @@ def compile_node_cond(ast_node: CondNode, exp_state: BashExpansionState):
 
 
 def compile_node_arith_for(ast_node: ArithForNode, exp_state: BashExpansionState):
-    ast_node.init = compile_command_arguments(ast_node.init, exp_state)
-    ast_node.cond = compile_command_arguments(ast_node.cond, exp_state)
-    ast_node.step = compile_command_arguments(ast_node.step, exp_state)
-    ast_node.action = compile_node(ast_node.action, exp_state)
-    return ast_node
+    raise Unimplemented("Invalidating the for loop variable", ast_node)
+    # ast_node.init = compile_command_arguments(ast_node.init, exp_state)
+    # ast_node.cond = compile_command_arguments(ast_node.cond, exp_state)
+    # ast_node.step = compile_command_arguments(ast_node.step, exp_state)
+    # ast_node.action = compile_node(ast_node.action, exp_state)
+    # return ast_node
 
 
 def compile_node_coproc(ast_node: CoprocNode, exp_state: BashExpansionState):
-    ast_node.name = compile_command_argument(ast_node.name, exp_state)
-    ast_node.body = compile_node(ast_node.body, exp_state)
-    return ast_node
+    raise Unimplemented("Invalidating the coproc variable", ast_node)
+    # ast_node.name = compile_command_argument(ast_node.name, exp_state)
+    # ast_node.body = compile_node(ast_node.body, exp_state)
+    # return ast_node
 
 
 def compile_node_time(ast_node: TimeNode, exp_state: BashExpansionState):
@@ -373,7 +525,8 @@ def compile_node_time(ast_node: TimeNode, exp_state: BashExpansionState):
 
 def compile_node_group(ast_node: GroupNode, exp_state: BashExpansionState):
     ast_node.body = compile_node(ast_node.body, exp_state)
-    ast_node.redirections = compile_redirections(ast_node.redirections, exp_state)
+    # not supported currently
+    # ast_node.redirections = compile_redirections(ast_node.redirections, exp_state)
     return ast_node
 
 
@@ -383,28 +536,41 @@ def compile_command_arguments(
     args: list[list[QArgChar] | list[CArgChar]] = []
     for argument in arguments:
         compiled_arg = compile_command_argument(argument, exp_state)
-        if should_expand(argument):
-            # flatten
-            args.extend(compiled_arg)
-        else:
-            args.append(compiled_arg)
+        args.extend(compiled_arg)
     return args
 
 
-# can word expand, so either returns a list of quoted expanded args
-# or the original argument
 def compile_command_argument(
-    argument: list[CArgChar], exp_state: BashExpansionState
-) -> list[CArgChar] | list[list[QArgChar]]:
-    if not should_expand(argument):
-        return argument
-    expanded = exp_state.expand_word("".join(chr(c.char) for c in argument))
+    argument: list[CArgChar], exp_state: BashExpansionState, split=True
+) -> list[list[QArgChar]] | list[list[CArgChar]]:
+    str_arg = join_argchars_as_str(argument)
+    exp_result = should_expand_var(argument)
+    if exp_result and split:
+        expanded = exp_state.expand_word(str_arg)
+    elif exp_result and not split:
+        expanded = [exp_state.expand_no_split(str_arg)]
+    else:
+        return [argument]
     nodes = [[str_to_quoted_arg_char(ea)] for ea in expanded]
     return nodes
 
 
-def str_to_quoted_arg_char(data: str) -> QArgChar:
-    return QArgChar([CArgChar(ord(c)) for c in data])
+def compile_arith_arguments(
+    arguments: list[list[CArgChar]], exp_state: BashExpansionState
+) -> list[CArgChar]:
+    args = []
+    for argument in arguments:
+        argument = compile_arith_argument(argument, exp_state)
+        args.append(argument)
+    return args
+
+
+def compile_arith_argument(
+    argument: list[CArgChar], exp_state: BashExpansionState
+) -> list[CArgChar]:
+    expanded = exp_state.expand_no_split(join_argchars_as_str(argument))
+    nodes = [str_to_arg_chars(ea) for ea in expanded]
+    return nodes
 
 
 def compile_command_assignments(
@@ -418,8 +584,8 @@ def compile_command_assignments(
 def compile_command_assignment(
     assignment: AssignNode, exp_state: BashExpansionState
 ) -> AssignNode:
-    assignment.val = compile_command_argument(assignment.val, exp_state)
-    exp_state.update_var_file(assignment.pretty())
+    assignment.val = compile_command_argument(assignment.val, exp_state, split=False)[0]
+    exp_state.update_var_file(assignment)
     return assignment
 
 
@@ -432,12 +598,12 @@ def compile_redirections(
 def compile_redirection(
     redir: RedirectionNode, exp_state: BashExpansionState
 ) -> RedirectionNode:
-    type = redir.redir_type
+    type = redir.NodeName
     if type == "File":
         return compile_redirection_file(redir, exp_state)
     elif type == "Dup":
         return compile_redirection_dup(redir, exp_state)
-    elif type == "Here":
+    elif type == "Heredoc":
         return compile_redirection_here(redir, exp_state)
     elif type == "SingleArg":
         return compile_redirection_single_arg(redir, exp_state)
@@ -452,7 +618,9 @@ def compile_command_cases(
 
 
 def compile_command_case(case: dict, exp_state: BashExpansionState) -> dict:
-    case["pattern"] = compile_command_argument(case["pattern"], exp_state)
+    case["pattern"] = compile_command_argument(case["pattern"], exp_state, split=False)[
+        0
+    ]
     case["body"] = compile_node(case["body"], exp_state)
     return case
 
@@ -461,8 +629,8 @@ def compile_redirection_file(
     redir: FileRedirNode, exp_state: BashExpansionState
 ) -> FileRedirNode:
     if redir.fd[0] == "var":
-        redir.fd[1] = compile_command_argument(redir.fd[1], exp_state)
-    redir.arg = compile_command_argument(redir.arg, exp_state)
+        raise ImpureExpansion("Runtime fd:", redir)
+    redir.arg = compile_command_argument(redir.arg, exp_state, split=False)[0]
     return redir
 
 
@@ -470,9 +638,9 @@ def compile_redirection_dup(
     redir: DupRedirNode, exp_state: BashExpansionState
 ) -> DupRedirNode:
     if redir.fd[0] == "var":
-        redir.fd[1] = compile_command_argument(redir.fd[1], exp_state)
+        raise ImpureExpansion("Runtime fd:", redir)
     if redir.arg[0] == "var":
-        redir.arg[1] = compile_command_argument(redir.arg[1], exp_state)
+        raise ImpureExpansion("Runtime fd:", redir)
     return redir
 
 
@@ -480,8 +648,8 @@ def compile_redirection_here(
     redir: HeredocRedirNode, exp_state: BashExpansionState
 ) -> HeredocRedirNode:
     if redir.fd[0] == "var":
-        redir.fd[1] = compile_command_argument(redir.fd[1], exp_state)
-    redir.arg = compile_command_argument(redir.arg, exp_state)
+        raise ImpureExpansion("Runtime fd:", redir)
+    redir.arg = compile_command_argument(redir.arg, exp_state, split=False)[0]
     return redir
 
 
@@ -489,5 +657,5 @@ def compile_redirection_single_arg(
     redir: SingleArgRedirNode, exp_state: BashExpansionState
 ) -> SingleArgRedirNode:
     if redir.fd[0] == "var":
-        redir.fd[1] = compile_command_argument(redir.fd[1], exp_state)
+        raise ImpureExpansion("Runtime fd:", redir)
     return redir
