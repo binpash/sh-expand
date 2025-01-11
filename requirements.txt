@@ -1,3 +1,0 @@
-libdash
-shasta
-pexpect
