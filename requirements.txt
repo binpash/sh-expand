@@ -1,0 +1,4 @@
+libbash
+libdash
+shasta
+pexpect
