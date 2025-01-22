@@ -1,6 +1,6 @@
 [project]
 name = "sh-expand"
-version = "0.1.7"
+version = "0.2.0"
 authors = [
   { name="Michael Greenberg", email="michael@greenberg.science" },
   { name="Konstantinos Kallas", email="konstantinos.kallas@hotmail.com" },
@@ -17,7 +17,17 @@ classifiers = [
 ]
 dependencies = [
   'shasta',
+  'pexpect'
 ]
+
+[build-system]
+requires = [
+    "setuptools>=60",
+    "setuptools-scm>=8.0"
+]
+
+[project.optional-dependencies]
+dev = ["libbash", "libdash"]
 
 [project.urls]
 "Homepage" = "https://github.com/binpash/sh-expand"
