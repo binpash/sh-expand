@@ -13,7 +13,6 @@ from shasta.ast_node import (
     ArgChar,
     ArithForNode,
     ArithNode,
-    AssignNode,
     AstNode,
     BackgroundNode,
     CArgChar,
@@ -174,8 +173,6 @@ def join_argchars_as_str(data: list[ArgChar]) -> str:
 
 class BashExpansionState:
     temp_dir: str | None
-    var_file: TextIO
-    var_file_path: str
     debug: bool
 
     bash_mirror: pexpect.spawn
@@ -216,7 +213,6 @@ class BashExpansionState:
         if self.is_open:
             self.close()
 
-        self.var_file_path, self.var_file = self.make_temp_file("bash_expand_vars")
         self.bash_mirror = self.spawn_bash()
         self.is_open = True
 
@@ -232,8 +228,6 @@ class BashExpansionState:
         except pexpect.ExceptionPexpect:
             # TODO: Fails sometimes
             pass
-        self.var_file.close()
-        os.remove(self.var_file_path)
 
     @contextmanager
     def subshell(self):
@@ -242,17 +236,6 @@ class BashExpansionState:
             yield
         finally:
             self.run_command("exit")
-
-    def update_var_file(self, node: AstNode):
-        assert self.is_open
-
-        self.var_file.write(node.pretty() + "\n")
-
-    def update_bash_mirror_vars(self):
-        self.run_command(source_file_cmd(self.var_file_path))
-
-        # variables have been saved in the bash process
-        self.var_file.truncate(0)
 
     def expand_word(self, word: str) -> list[str]:
         assert self.is_open
@@ -277,11 +260,6 @@ class BashExpansionState:
 
         self.log("Bash expansion output is:", output)
         return output
-
-    def unset_vars(self, vars: list[AssignNode]):
-        if vars:
-            var_names = " ".join(var.var for var in vars)
-            self.run_command(f"unset -v {var_names}")
 
     def run_command(self, bash_command: str) -> str:
         assert self.is_open
@@ -366,12 +344,10 @@ def compile_node_pipe(ast_node: PipeNode, exp_state: BashExpansionState):
 
 
 def compile_node_command(ast_node: CommandNode, exp_state: BashExpansionState):
-    if ast_node.assignments and not ast_node.arguments:
+    if ast_node.assignments:
         raise ImpureExpansion("Assignment", ast_node)
 
-    ast_node.assignments = compile_command_assignments(ast_node.assignments, exp_state)
     ast_node.arguments = compile_command_arguments(ast_node.arguments, exp_state)
-    exp_state.unset_vars(ast_node.assignments)
 
     # TODO: Allow declare, set, readonly, local, etc and remove the
     # corrosponding ast_node
@@ -571,22 +547,6 @@ def compile_arith_argument(
     expanded = exp_state.expand_no_split(join_argchars_as_str(argument))
     nodes = [str_to_arg_chars(ea) for ea in expanded]
     return nodes
-
-
-def compile_command_assignments(
-    assignments: list[AssignNode], exp_state: BashExpansionState
-) -> list[AssignNode]:
-    return [
-        compile_command_assignment(assignment, exp_state) for assignment in assignments
-    ]
-
-
-def compile_command_assignment(
-    assignment: AssignNode, exp_state: BashExpansionState
-) -> AssignNode:
-    assignment.val = compile_command_argument(assignment.val, exp_state, split=False)[0]
-    exp_state.update_var_file(assignment)
-    return assignment
 
 
 def compile_redirections(
