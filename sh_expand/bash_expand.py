@@ -130,8 +130,6 @@ def should_expand_var(word: list[CArgChar]) -> bool:
             raise ImpureExpansion("Potential dangerous tilde expansion:", carg)
         if pair in {"<(", ">(", "$("}:
             raise ImpureExpansion("Potential process substitution", carg)
-        if char == "(":
-            raise ImpureExpansion("Potential array", carg)
         if char == "$":
             seen_dollar_sign = True
         if char in need_to_expand_chars:
