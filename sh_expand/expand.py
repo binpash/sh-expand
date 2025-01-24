@@ -1,5 +1,3 @@
-import copy
-
 from shasta.ast_node import *
 
 from sh_expand.util import log
@@ -442,8 +440,7 @@ def expand_command(command, exp_state: ExpansionState):
 
 def expand_pipe(node, exp_state):
     for i, n in enumerate(node.items):
-        # copy environment to simulate subshell (no outer effect)
-        node.items[i] = expand_command(n, copy.deepcopy(exp_state))
+        node.items[i] = expand_command(n, exp_state)
 
     return node
 
@@ -477,21 +474,16 @@ def expand_and_or_semi(node, exp_state):
     return node
 
 def expand_redir_subshell(node, exp_state):
-    # copy environment to simulate subshell (no outer effect)
-    node.node = expand_command(node.node, copy.deepcopy(exp_state))
-
+    node.node = expand_command(node.node, exp_state)
     return node
 
 def expand_background(node, exp_state):
-    # copy environment to simulate subshell (no outer effect)
-    node.node = expand_command(node.node, copy.deepcopy(exp_state))
-
+    node.node = expand_command(node.node, exp_state)
     return node
 
 def expand_defun(node, exp_state):
     # TODO 2020-11-24 MMG invalidate postional args
-    node.body = expand_command(node.body, copy.deepcopy(exp_state))
-
+    node.body = expand_command(node.body, exp_state)
     return node
 
 def expand_for(node, exp_state):
