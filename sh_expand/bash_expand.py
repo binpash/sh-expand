@@ -4,7 +4,6 @@ import os
 import sys
 import tempfile
 from collections.abc import Callable
-from contextlib import contextmanager
 from typing import TextIO
 
 import pexpect
@@ -227,14 +226,6 @@ class BashExpansionState:
             # TODO: Fails sometimes
             pass
 
-    @contextmanager
-    def subshell(self):
-        try:
-            self.run_command(STR_COMMAND)
-            yield
-        finally:
-            self.run_command("exit")
-
     def expand_word(self, word: str) -> list[str]:
         assert self.is_open
         self.log("To expand with bash:", word)
@@ -335,9 +326,7 @@ def compile_node(ast_object: AstNode, exp_state: BashExpansionState) -> AstNode:
 
 
 def compile_node_pipe(ast_node: PipeNode, exp_state: BashExpansionState):
-    # TODO: Handle shopt -s lastpipe
-    with exp_state.subshell():
-        ast_node.items = [compile_node(item, exp_state) for item in ast_node.items]
+    ast_node.items = [compile_node(item, exp_state) for item in ast_node.items]
     return ast_node
 
 
@@ -355,8 +344,7 @@ def compile_node_command(ast_node: CommandNode, exp_state: BashExpansionState):
 
 
 def compile_node_subshell(ast_node: SubshellNode, exp_state: BashExpansionState):
-    with exp_state.subshell():
-        ast_node.body = compile_node(ast_node.body, exp_state)
+    ast_node.body = compile_node(ast_node.body, exp_state)
     return ast_node
 
 
@@ -391,8 +379,7 @@ def compile_node_redir(ast_node: RedirNode, exp_state: BashExpansionState):
 
 def compile_node_background(ast_node: BackgroundNode, exp_state: BashExpansionState):
     ast_node.redir_list = compile_redirections(ast_node.redir_list, exp_state)
-    with exp_state.subshell():
-        ast_node.node = compile_node(ast_node.node, exp_state)
+    ast_node.node = compile_node(ast_node.node, exp_state)
     return ast_node
 
 
