@@ -182,7 +182,7 @@ def set_special_parameters(variables: dict):
         new_vars['#'] = ia_t, str(len(input_args))
         for i, arg in enumerate(input_args):
             index = i + 1
-            new_vars[str(index)] = input_args[i]
+            new_vars[str(index)] = ia_t, input_args[i]
 
     if not exit_status is None:
         new_vars['?'] = es_t, exit_status
