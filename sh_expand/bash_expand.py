@@ -203,7 +203,8 @@ class BashExpansionState:
             log_path, log_file = self.make_temp_file("bash_mirror_log")
             self.log("bash mirror log saved in:", log_path)
             p.logfile = log_file
-        p.sendline(f"set -- {" ".join(positional_params)}")
+        positional_params = ' '.join(positional_params)
+        p.sendline(f"set -- {positional_params}")
         p.expect_exact(PS1)
         return p
 
