@@ -5,6 +5,7 @@ import sys
 import tempfile
 from collections.abc import Callable
 from typing import TextIO
+import shlex
 
 import pexpect
 from shasta.ast_node import (
@@ -190,7 +191,7 @@ class BashExpansionState:
         if open:
             self.open()
 
-    def spawn_bash(self) -> pexpect.spawn:
+    def spawn_bash(self, positional_params: list = []) -> pexpect.spawn:
         p = pexpect.spawn(
             BASH_COMMAND[0],
             BASH_COMMAND[1:],
@@ -203,14 +204,16 @@ class BashExpansionState:
             log_path, log_file = self.make_temp_file("bash_mirror_log")
             self.log("bash mirror log saved in:", log_path)
             p.logfile = log_file
-
+        positional_params = ' '.join([shlex.quote(param) for param in positional_params])
+        p.sendline(f"set -- {positional_params}")
+        p.expect_exact(PS1)
         return p
 
-    def open(self):
+    def open(self, positional_params: list = []):
         if self.is_open:
             self.close()
 
-        self.bash_mirror = self.spawn_bash()
+        self.bash_mirror = self.spawn_bash(positional_params)
         self.is_open = True
 
     def close(self):
