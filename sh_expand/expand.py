@@ -314,7 +314,7 @@ def expand_arg(arg_chars, exp_state, quoted = False):
 
 def expand_arg_char(arg_char: ArgChar, quoted, exp_state):
     if isinstance(arg_char, CArgChar):
-        if arg_char.char in ['*', '?', '{', '}', '[', ']'] and not quoted:
+        if chr(arg_char.char) in ['*', '?', '{', '}', '[', ']'] and not quoted:
             raise Unimplemented("globbing", arg_char)
 
         return [arg_char]
