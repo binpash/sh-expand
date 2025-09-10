@@ -1,0 +1,1 @@
+echo $1 is passed onto this script

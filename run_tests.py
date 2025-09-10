@@ -180,7 +180,7 @@ for test_name, mode in dash_bash_expansion_tests:
             if mode == "dash":
                 cmd = expand.expand_command(ast_object, copy.deepcopy(exp_state))
             elif mode == "bash":
-                exp_state.open()  # to create a new bash process
+                exp_state.open(["greenberg"])  # to create a new bash process
                 cmd = bash_expand.expand_command(
                     ast_object,
                     exp_state,
